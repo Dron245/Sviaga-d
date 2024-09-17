@@ -1,4 +1,53 @@
+<!-- @format -->
+
 <header class="header">
-	<div class="header__container">
+	<div class="header__container container">
+		<a class="header__logo">
+			<img src="@img/header/logo-header.svg" alt="" />
+		</a>
+		<ul class="header__nav nav modal-content--navigation">
+			<li class="nav__item">
+				<a href=""> О нас </a>
+			</li>
+			<li class="nav__item accardeon">
+				<a href="" class="accardeon__head">
+					<span> Услуги </span>
+					<img src="@img/header/arrow.svg" alt="Image">
+				</a>
+				<div class="accardeon__content accardeon-hidden">
+					<a class="option">Ресторан</a>
+					<a class="option">Банкетные залы</a>
+				</div>
+			</li>
+			<li class="nav__item accardeon">
+				<a href="" class="accardeon__head">
+					<span> Развлечения </span>
+					<img src="@img/header/arrow.svg" alt="Image">
+				</a>
+				<div class="accardeon__content accardeon-hidden">
+					<a class="option">Ресторан</a>
+					<a class="option">Банкетные залы</a>
+				</div>
+			</li>
+			<li class="nav__item">
+				<a href=""> Бронирование </a>
+			</li>
+			<li class="nav__item">
+				<a href=""> Контакты </a>
+			</li>
+		</ul>
+		<div class="header__block">
+			<a href="" class="watsupp">
+				<svg width="32" height="32">
+					<use xlink:href="img/sprite_auto.svg#icon-watsapp"></use>
+				</svg>
+			</a>
+			<div class="to-book desctop">Забронировать</div>
+			<div class="burger mobile" data-modal="navigation">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
 	</div>
 </header>
