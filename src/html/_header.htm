@@ -5,49 +5,40 @@
 		<a class="header__logo">
 			<img src="@img/header/logo-header.svg" alt="" />
 		</a>
-		<ul class="header__nav nav modal-content--navigation">
-			<li class="nav__item">
-				<a href=""> О нас </a>
-			</li>
-			<li class="nav__item accardeon">
-				<a href="" class="accardeon__head">
-					<span> Услуги </span>
-					<img src="@img/header/arrow.svg" alt="Image">
-				</a>
-				<div class="accardeon__content accardeon-hidden">
-					<a class="option">Ресторан</a>
-					<a class="option">Банкетные залы</a>
-				</div>
-			</li>
-			<li class="nav__item accardeon">
-				<a href="" class="accardeon__head">
-					<span> Развлечения </span>
-					<img src="@img/header/arrow.svg" alt="Image">
-				</a>
-				<div class="accardeon__content accardeon-hidden">
-					<a class="option">Ресторан</a>
-					<a class="option">Банкетные залы</a>
-				</div>
-			</li>
-			<li class="nav__item">
-				<a href=""> Бронирование </a>
-			</li>
-			<li class="nav__item">
-				<a href=""> Контакты </a>
-			</li>
-		</ul>
-		<div class="header__block">
-			<a href="" class="watsupp">
-				<svg width="32" height="32">
-					<use xlink:href="img/sprite_auto.svg#icon-watsapp"></use>
-				</svg>
-			</a>
-			<div class="to-book desctop">Забронировать</div>
-			<div class="burger mobile" data-modal="navigation">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
+		<div class="header__menu menu">
+			<nav class="menu__body">
+				<ul class="menu__list">
+					<li class="menu__item"><a href="#" class="menu__link">О нас</a></li>
+					<li class="menu__item menu__item_group">
+						<div class="menu__subtitle">
+							<a href="#" class="menu__link">Услуги</a>
+							<img src="@img/header/arrow.svg" alt="Image">
+						</div>
+						<ul class="menu__sublist">
+							<li class="menu__subitem"><a href="#" class="menu__sublink">Ресторан</a></li>
+							<li class="menu__subitem"><a href="#" class="menu__sublink">Банкетные залы</a></li>
+						</ul>
+					</li>
+					<li class="menu__item menu__item_group">
+						<div class="menu__subtitle">
+							<a href="#" class="menu__link">Развлечения</a>
+							<img src="@img/header/arrow.svg" alt="Image">
+						</div>
+						<ul class="menu__sublist">
+							<li class="menu__subitem"><a href="#" class="menu__sublink">Ресторан</a></li>
+							<li class="menu__subitem"><a href="#" class="menu__sublink">Банкетные залы</a></li>
+						</ul>
+					</li>
+					<li class="menu__item"><a href="#" class="menu__link">Бронирование</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="header__actions actions-header">
+			<!-- <button type="button" class="menu__icon icon-menu"><span></span></button> -->
+			<a href="#" class="actions-header__link"><img src="@img/header/mage_whatsapp-filled.svg" alt="Image"></a>
+			<button type="button" class="actions-header__button button">Забронировать</button>
+			<button type="button" class="menu__icon icon-menu"><img src="@img/header/burger.svg" alt="Image"></button>
 		</div>
 	</div>
 </header>

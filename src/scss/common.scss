@@ -1,1 +1,15 @@
 // Заголовки, общие БЄМ блоки и прочее...
+.button {
+	font-weight: 700;
+	font-size: 19px;
+	padding-block: 25px;
+	color: $mainColor;
+	border-radius: 10px;
+	transition: background-color 0.3s;
+	&:hover {
+		background-color: #426f37;
+	}
+	&:active {
+		background-color: #426f37;
+	}
+}

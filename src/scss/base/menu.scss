@@ -4,7 +4,7 @@
 	}
 	// .menu__body
 	&__body {
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 			position: fixed;
 			width: 100%;
 			height: 100%;
@@ -33,7 +33,7 @@
 	}
 	// .menu__list
 	&__list {
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 		}
 	}
 	// .menu__item
@@ -41,7 +41,7 @@
 	}
 	// .menu__link
 	&__link {
-		@media (max-width: $mobile) {
+		@media (max-width: $tablet) {
 		}
 	}
 }
@@ -49,50 +49,8 @@
 //Burger Icon
 .icon-menu {
 	display: none;
-	@media (max-width: $mobile) {
+	@media (max-width: $tablet) {
 		display: block;
-		position: relative;
-		width: toRem(30);
-		height: toRem(18);
-		z-index: 5;
-		@media (any-hover: none) {
-			cursor: default;
-		}
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: toRem(2);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - toRem(1));
-		}
-		.menu-open & {
-			span {
-				width: 0;
-			}
-			&::before,
-			&::after {
-			}
-			&::before {
-				top: calc(50% - toRem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - toRem(1));
-				transform: rotate(45deg);
-			}
-		}
+		
 	}
 }

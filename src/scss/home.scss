@@ -1,6 +1,10 @@
 //====================================================================================================
 .page {
-	background-color: $osnovnoy-temnyy;
+
+	&__banner {
+
+	}
+	// background-color: $osnovnoy-temnyy;
 	h2 {
 		font-size: 30px;
 	}
@@ -107,6 +111,32 @@
 	}
 	.d {
 		border-top-left-radius: 0;
+	}
+}
+
+.banner {
+
+	&__container {
+		background-color: $mainColor;
+		}
+
+	&__content {
+		position: relative;
+		border-radius: 20px;
+		background: url('@img/main/bg.png') center / cover no-repeat;
+		z-index: 1;
+		@include adaptiveValue("height",700 ,242,0,1320,360 );
+		@media (max-width:$tablet){
+			// margin-top: -82px;
+		}
+		@media (min-width:$tablet){
+			@include adaptiveValue("margin-top", -122, -96,0,1320,992);
+			  
+		}
+		@media (max-width:$tablet){
+			@include adaptiveValue("margin-top", -80, -47,0,991.98,360);
+		}
+		@include adaptiveValue("border-radius", 20, 10,0,1320,360);
 	}
 }
 //====================================================================================================
