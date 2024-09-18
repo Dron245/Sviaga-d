@@ -1,4 +1,15 @@
 // Заголовки, общие БЄМ блоки и прочее...
+.title {
+	@include adaptiveValue("font-size", 40, 20,0,1320,768);
+	line-height: 1.13;
+	font-weight: 700;
+	margin-bottom: 40px;
+}
+
+.text {
+	font-weight: 500;
+	line-height: 1.26;
+}
 .button {
 	font-weight: 700;
 	font-size: 19px;
@@ -12,4 +23,29 @@
 	&:active {
 		background-color: #426f37;
 	}
+}
+
+.arrow {
+	display:grid ;
+	 place-items:center;
+	 border-radius: 50%;
+	width: 70px;
+	background-color: $mainColor;
+	aspect-ratio: 1/1;
+	img {
+		transition: rotate 0.3s;
+	}
+	&:hover{
+		img {
+			rotate: 90deg;
+		}
+	}
+	@media (max-width:$mobile){
+		 width: 50px; 
+	}
+}
+
+.pagination {
+	display: flex;
+	gap: 5px;
 }

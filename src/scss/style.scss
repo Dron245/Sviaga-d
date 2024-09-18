@@ -163,4 +163,11 @@ body {
 @import "footer";
 
 // Подключение стилей отдельных страниц
-@import "home";
+@import "datarangepeacker";
+@import "home/baner.scss";
+@import "home/welcome.scss";
+@import "home/atmosfere.scss";
+@import "home/appartaments.scss";
+@import "home/details.scss";
+@import "home/inclub.scss";
+

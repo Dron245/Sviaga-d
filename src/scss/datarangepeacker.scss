@@ -1,0 +1,50 @@
+.daterangepicker {
+	box-shadow: 4px 4px 4px 0px #5B514733;
+	.drp-buttons {
+		color: $dop-temnyy;
+	}
+	.weekend {
+	  color: #C82828;
+	}
+ 
+	.table-condensed {
+	  thead {
+		 th {
+			min-width: 36px;
+			border: none;
+			color: $dop-temnyy;
+		 }
+	  }
+ 
+	  tbody {
+		 td {
+			border: none;
+			&.available {
+			  // border: 1px solid var(--color-main);
+			  outline: 1px solid $dop-temnyy;
+			  color: $dop-temnyy;
+			  &.active {
+				color: #fff;
+			  }
+			  &.off {
+				 border: none;
+			  }
+			}
+			&.active {
+			  &.start-date {
+				 background: linear-gradient(90deg, #A5896F 2.5%, #50453B 100%);
+			  }
+ 
+			  &.end-date {
+				 background: linear-gradient(90deg, #50453B 0%, #A5896F 100%);
+			  }
+			}
+			&.in-range {
+			  background: #50453B;
+			  color: #fff;
+			}
+		 }
+	  }
+	}
+ 
+ }
