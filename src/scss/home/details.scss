@@ -1,4 +1,8 @@
 	.details {
+		background-color: $osnovnoy-temnyy;
+		border-radius: 0 0 30px 30px;
+		@include adaptiveValue("padding-top", 80, 40,0,1320,768);
+		@include adaptiveValue("padding-bottom", 80, 20,0,1320,768);
 		&__body {
 			outline: 1px solid red;
 			margin-top: 100px;
@@ -6,7 +10,12 @@
 			gap: 30px;
 			grid-template-columns: repeat(4, 1fr);
 			position: relative;
-
+			@media (max-width:$tablet){
+				grid-template-columns: 1fr 1fr;
+			}
+			@media (max-width:$mobileSmall){
+				 grid-template-columns: 1fr; 
+			}
 			&::after {
 				content: '';
 				position: absolute;
@@ -62,10 +71,11 @@
 			}
 	
 			p {
-				color: $dop-temnyy;
+				text-align: center;
+				color: $osnovnoy-temnyy;
 				font-weight: 700;
-				font-size: 30px;
 				margin-top: 10px;
+				@include adaptiveValue("font-size", 30, 20,0,1320,768);
 			}
 	
 			&.r {
@@ -117,3 +127,68 @@
 	.d {
 		border-top-left-radius: 0;
 	}
+
+	.page {
+
+		&__details {
+		}
+}
+.details {
+
+		&__container {
+		}
+
+		&__title {
+		}
+
+		&__body {
+		}
+
+		&__item {
+
+			&_1 {
+			}
+
+			&_2 {
+				p {
+					color: $mainColor;
+				}
+			}
+
+			&_3 {
+			}
+
+			&_4 {
+			}
+
+			&_5 {
+			}
+
+			&_6 {
+			}
+
+			&_7 {
+				p {
+					color: $mainColor;
+				}
+			}
+
+			&_8 {
+			}
+		}
+
+		&__content {
+		}
+}
+.title {
+}
+.q {
+}
+.b {
+}
+.c {
+}
+.r {
+}
+.d {
+}

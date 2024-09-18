@@ -1,14 +1,19 @@
 // Заголовки, общие БЄМ блоки и прочее...
 .title {
-	@include adaptiveValue("font-size", 40, 20,0,1320,768);
 	line-height: 1.13;
 	font-weight: 700;
-	margin-bottom: 40px;
+	text-transform: uppercase;
+	text-wrap: balance;
+	@include adaptiveValue("margin-bottom", 40, 20,0,1320,768);
+	@include adaptiveValue("font-size", 40, 20,0,1320,768);
 }
 
 .text {
 	font-weight: 500;
 	line-height: 1.26;
+	@media (max-width:$mobileSmall){
+		 font-size: 15px; 
+	}
 }
 .button {
 	font-weight: 700;
@@ -16,12 +21,15 @@
 	padding-block: 25px;
 	color: $mainColor;
 	border-radius: 10px;
-	transition: background-color 0.3s;
+	transition: background-color 0.3s, color 0.3s;
 	&:hover {
 		background-color: #426f37;
 	}
 	&:active {
 		background-color: #426f37;
+	}
+	@media (max-width:$mobile){
+		 padding-block: 20px; 
 	}
 }
 
@@ -47,5 +55,18 @@
 
 .pagination {
 	display: flex;
+	justify-content: center;
 	gap: 5px;
+	.swiper-pagination-bullet {
+		border-radius: 50%;
+		width: 15px;
+		height: 15px;
+		border: 1px solid $dop-svetlyy;
+		background-color: $osnovnoy-temnyy;
+		transition: background-color 0.5s;
+	}
+
+	.swiper-pagination-bullet-active {
+		background-color: $dop-svetlyy;
+	}
 }

@@ -1,7 +1,7 @@
 .banner {
-
+	background-color: $mainColor;
+	@include adaptiveValue("padding-bottom", 60, 40,0,1320,768);
 	&__container {
-		background-color: $mainColor;
 		}
 
 	&__content {
@@ -211,6 +211,11 @@ background: #fff;
 		margin-top: 10px;
 		display:grid ;
 		 place-items:center;
+		 &:hover{
+			background-color: $mainColor;
+			color: $dop-temnyy;
+			outline: 1px solid $dop-temnyy;
+		 }
 	}
 }
 .quantity {
