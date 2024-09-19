@@ -1,10 +1,9 @@
 .page {
-
 	&__rooms {
+		@include adaptiveValue("margin-top", 80, 40, 0, 1320, 768);
 	}
 }
 .rooms {
-
 	&__container {
 	}
 
@@ -15,46 +14,127 @@
 	}
 }
 .title {
-
 	&_temnyy {
 	}
 }
 .galery {
-
+	display: grid;
+	justify-content: space-between;
+	grid-template-columns: repeat(2, 48.837209%); /* 630/1290 */
+	@media (max-width:$mobile){
+		 grid-template-columns: 100%; 
+	}
 	&__col {
+		@media (max-width:$mobile){
+			 &:not(:last-child) {
+				margin-bottom: 20px;
+			 } 
+		}
+		&:has(.galery__button-all) {
+			display: flex;
+			flex-direction: column;
+			.galery__items {
+				@include adaptiveValue("margin-bottom", 90, 20, 0, 1320, 768);
+			}
+		}
+		&:last-child{
+			@media (min-width:$tablet){
+				  .galery__items {
+				translate: 0 40px;
+
+			}
+			}
+			
+		}
 	}
 
 	&__items {
 	}
 
 	&__item {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		box-shadow: 4px 4px 10px 0 rgba(80, 69, 59, 0.2);
+		background: var(--osnovnoy-svetlyy);
+		border-radius: 20px;
+		&:not(:last-child) {margin-bottom: toRem(30);}
+		@media (max-width: $mobile) {
+			border-radius: 10px;
+		}
 	}
 
 	&__slider {
+		position: relative;
+		border-radius: 20px;
+		@media (max-width: $mobile) {
+			border-radius: 10px;
+		}
 	}
 
 	&__wrapper {
 	}
 
 	&__slide {
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 
-	&__pagination {
+	&__pagination[class] {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		translate: -50%;
+		margin-bottom: 0;
+		.swiper-pagination-bullet {
+			border: 1px solid $mainColor;
+		background-color: transparent;
+		}
+		.swiper-pagination-bullet-active {
+			background-color: $mainColor;
+		}
 	}
 
 	&__content {
+		color: $dop-temnyy;
+		padding: 40px toRem(30);
+		@media (max-width: $mobile) {
+			padding: 20px toRem(15);
+		}
 	}
 
 	&__title {
+		@include adaptiveValue("margin-bottom", 15, 10, 0, 1320, 768);
 	}
 
 	&__text {
+		font-weight: 500;
+		// height: 78px;
+		
+		&:not(:last-child) {
+			margin-bottom: 30px;
+			@include adaptiveValue("font-size", 25, 15,0,1320,768);
+			
+			@media (max-width: $mobile) {
+				margin-bottom: 20px;
+			}
+			@media (max-width: $mobileSmall) {
+				font-size: 15px;
+			}
+		}
 	}
 
 	&__button {
+		width: 100%;
+		text-align: center;
 	}
 
 	&__button-all {
+		width: 100%;
+		text-align: center;
+		margin-top: auto;
 	}
 }
 .swiper {
@@ -64,7 +144,6 @@
 .swiper-slide {
 }
 .pagination {
-
 	&_invert {
 	}
 }

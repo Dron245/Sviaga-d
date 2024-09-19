@@ -3,7 +3,9 @@
 		border-radius: 0 0 30px 30px;
 		@include adaptiveValue("padding-top", 80, 40, 0, 1320, 768);
 		@include adaptiveValue("padding-bottom", 80, 20, 0, 1320, 768);
-
+		@media (max-width:$mobile){
+			 border-radius: 0 0 20px 20px; 
+		}
 		&__body {
 			margin-top: 100px;
 			display: grid;
@@ -32,7 +34,7 @@
 				left: 50%;
 				translate: -50% -50%;
 
-				@media (max-width:$mobile) {
+				@media (max-width:$tablet) {
 					display: none;
 				}
 			}
@@ -66,6 +68,7 @@
 		&__content {
 			display: grid;
 			justify-items: center;
+			padding: 5px;
 		}
 	}
 
@@ -149,10 +152,11 @@
 			&_1 {}
 
 			&_2 {
-				border-bottom-right-radius: 0;
 				background-color: initial;
 				border: 2px solid $mainColor;
-
+				@media (min-width:$tablet){
+					border-bottom-right-radius: 0;
+				}
 				p {
 					color: $mainColor;
 				}
@@ -274,10 +278,11 @@
 			}
 
 			&_7 {
-				border-top-left-radius: 0;
 				background-color: initial;
 				border: 2px solid $mainColor;
-
+				@media (min-width:$tablet){
+					border-top-left-radius: 0;
+				}
 				p {
 					color: $mainColor;
 				}
@@ -297,6 +302,13 @@
 						border-top: 2px solid $osnovnoy-temnyy;
 						border-bottom: 2px solid $osnovnoy-temnyy;
 						z-index: 2;
+						&::before{
+							// content:'';
+							border-right: 2px solid #fffaf0;
+						}
+						&::after{
+							border-left: 2px solid #fffaf0;
+						}
 					}
 
 				}

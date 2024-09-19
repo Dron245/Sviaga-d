@@ -80,8 +80,7 @@ function initSliders() {
 			modules: [Pagination, Autoplay],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 2,
-			spaceBetween: 0,
+			
 			//autoHeight: true,
 			speed: 800,
 			loop: true,
@@ -95,10 +94,15 @@ function initSliders() {
 			},
 			breakpoints: {
 				0: {
-					slidesPerView:1
+					slidesPerView:1.2,
+					spaceBetween:10,
+					centeredSlides: true,
 				},
 				768: {
-					slidesPerView:2
+					slidesPerView:2,
+					spaceBetween: 30,
+					speed: 1000,
+					slidesPerGroup:2,
 				}
 			}
 		});

@@ -13,7 +13,9 @@
 .welcome {
 	background-color: $osnovnoy-temnyy;
 	border-radius: 30px 30px 0 0;
-
+	@media (max-width:$mobile){
+		 border-radius: 20px 20px 0 0; 
+	}
 	&__container {
 		display: flex;
 		@media (min-width:$mobile){

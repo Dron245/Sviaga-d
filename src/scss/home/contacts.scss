@@ -1,6 +1,13 @@
 .page {
 
 	&__contacts {
+		border-radius: 30px;
+		background-color: $osnovnoy-temnyy;
+		@include adaptiveValue("margin-block", 80, 40, 0, 1320, 768);
+		@include adaptiveValue("padding-block", 80, 40, 0, 1320, 768);
+		@media (max-width:$mobile){
+			 border-radius: 20px; 
+		}
 	}
 }
 .contacts {
@@ -8,34 +15,81 @@
 	&__container {
 	}
 
-	&__title {
+	&__subtitle {
+		font-weight: 500;
+		margin-bottom: 20px;@media (max-width:$mobile){
+			 margin-bottom: 10px; 
+		}
+		&_who[class] {
+			@include adaptiveValue("margin-top", 50, 20,0,1320,768);
+		}
+		@include adaptiveValue("font-size", 25, 16,0,1320,768);
+		
 	}
-
+	
 	&__content {
+		display: flex;
+		@media (min-width:$mobile){
+			 justify-content: space-between; 
+		}
+		@media (max-width:$mobile){
+			flex-direction: column; 
+			gap: 20px;
+		}
 	}
-
+	
 	&__who {
+		
+		@media (min-width:$mobile){
+			flex: 0 0 38%; 
+		}
 	}
-
+	
 	&__text {
+		
 	}
 
 	&__phone {
+		@media (min-width:$mobile){
+			 flex: 0 0 23%; 
+		}
 	}
 
 	&__subtext {
-
+		font-weight: 500;
+		margin-bottom: 10px;
+		@include adaptiveValue("font-size", 18, 15,0,1320,768);
 		&_two {
+			// @media (min-width:$mobile){
+				 margin-top: 15px; 
+			// }
 		}
 	}
 
 	&__link {
+		
 	}
 
+	&__link-social {
+		&:last-child{
+			margin-left: 20px;
+		}
+	}
 	&__social {
+		@media (max-width:$mobile){
+			 display: none; 
+		}
+		@media (min-width:$mobile){
+			// flex: 0 0 30%; 
+	  }
 	}
 
 	&__map {
+		border-radius: 30px;
+		overflow: hidden;
+		iframe {
+			width: 100%;
+		}
 	}
 }
 .subtitle {

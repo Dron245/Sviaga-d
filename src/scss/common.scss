@@ -13,7 +13,7 @@
 .subtitle {
 	font-weight: 700;
 		@media (max-width:$mobile){
-			 color: $osnovnoy-temnyy;
+			//  color: $osnovnoy-temnyy;
 		}
 		@include adaptiveValue("font-size", 30, 18,0,1320,768);
 	
@@ -35,6 +35,7 @@
 	padding-block: 25px;
 	color: $mainColor;
 	border-radius: 10px;
+	background-color: $osnovnoy-temnyy;
 	transition: background-color 0.3s, color 0.3s;
 	&:hover {
 		background-color: #426f37;
@@ -56,8 +57,8 @@
 }
 
 .arrow {
-	display:grid ;
-	 place-items:center;
+	display:flex ;
+	//  place-items:center;
 	 border-radius: 50%;
 	width: 70px;
 	background-color: $mainColor;
@@ -72,6 +73,9 @@
 	}
 	@media (max-width:$mobile){
 		 width: 50px; 
+	}
+	@media (max-width:$mobileSmall){
+		 width: 30px; 
 	}
 }
 

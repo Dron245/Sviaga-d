@@ -1,32 +1,72 @@
 .page {
 
 	&__alpack {
+		border-radius: 30px;
+		position: relative;
+		overflow: hidden;
+		background-color: $osnovnoy-temnyy;
+		@media (max-width:$mobile){
+			 border-radius: 20px; 
+		}
 	}
 }
 .alpack {
-
-	&__container {
+	// &__container {
+	@media (min-width:$mobile){
+		  
+		@include gridContainer(3);
 	}
+	@media (max-width:$mobile){
+		 @include gridContainer(0); 
+	}
+		// display: flex;
+		// padding-bottom: 50px;
+		
+	// }
 
 	&__body {
+		display: flex;
+		@media (max-width:$mobile){
+			flex-direction: column;
+		}
 	}
 
 	&__title {
+		@include adaptiveValue("padding-top", 60, 40,0,1320,768);
 	}
 
 	&__content {
+		margin-top: auto;
+		@media (min-width:$mobile){
+			  
+			flex: 0 0 60%;
+		}
 	}
 
 	&__subtitle {
+		margin-bottom: 20px;
+		@media (max-width:$mobile){
+			 color: $mainColor; 
+		}
 	}
 
 	&__text {
+		margin-bottom: 30px;
 	}
 
 	&__button {
+		width: 300px;
+		margin-bottom: 50px;
+		@media (max-width:$mobile){
+			 width: 100%; 
+		}
 	}
 
 	&__img {
+		img {
+		 width:100%;
+		 height:auto
+		}
 	}
 }
 .title {

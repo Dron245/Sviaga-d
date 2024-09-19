@@ -2,7 +2,7 @@
 
 <!doctype html>
 <html lang="en">
-	@@include('html/_head.htm',{ "title":"HomePage" })
+	@@include('html/_head.htm',{ "title":"Главная" })
 	<body>
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
@@ -456,9 +456,8 @@
 					</div>
 				</section>
 				<section class="page__alpack alpack">
-					<div class="alpack__container">
+						<h3 class="alpack__title title">Приезжайте обниматься с альпаками</h3>
 						<div class="alpack__body">
-							<h3 class="alpack__title title">Приезжайте обниматься с альпаками</h3>
 							<div class="alpack__content">
 								<h4 class="alpack__subtitle subtitle">
 									Альпаки, кролики и маралы ждут вас в загородном клубе «Свияга» рядом с
@@ -472,9 +471,8 @@
 								<button
 									class="alpack__button button button_invert"
 									type="button"
-								></button>
+								>Как добраться</button>
 							</div>
-						</div>
 						<div class="alpack__img">
 							<img src="@img/main/alpack/alpack.png" alt="Альпака" />
 						</div>
@@ -489,7 +487,7 @@
 						<div class="rooms__body galery">
 							<div class="galery__col">
 								<div class="galery__items">
-									<div class="galery__item">
+									<article class="galery__item">
 										<div class="galery__slider swiper">
 											<div class="galery__wrapper swiper-wrapper">
 												<div class="galery__slide swiper-slide">
@@ -505,20 +503,20 @@
 											<div class="galery__pagination pagination pagination_invert"></div>
 										</div>
 										<div class="galery__content">
-											<h5 class="galery__title">Номер «Семейный»</h5>
+											<h5 class="galery__title subtitle">Номер «Семейный»</h5>
 											<p class="galery__text">
 												Однокомнатный номер с двумя односпальными кроватями и диваном, 24
 												кв.м.
 											</p>
 											<a href="#" class="galery__button button">Подробнее</a>
 										</div>
-									</div>
+									</article>
 								</div>
 								<a href="#" class="galery__button-all button">Посмотреть все номера</a>
 							</div>
 							<div class="galery__col">
 								<div class="galery__items">
-									<div class="galery__item">
+									<article class="galery__item">
 										<div class="galery__slider swiper">
 											<div class="galery__wrapper swiper-wrapper">
 												<div class="galery__slide swiper-slide">
@@ -534,13 +532,13 @@
 											<div class="galery__pagination pagination pagination_invert"></div>
 										</div>
 										<div class="galery__content">
-											<h5 class="galery__title">Коттедж «№8»</h5>
+											<h5 class="galery__title subtitle">Коттедж «№8»</h5>
 											<p class="galery__text">
 												Двухэтажный коттедж расположенный на левом берегу озера, 80 кв.м.
 											</p>
 											<a href="#" class="galery__button button">Подробнее</a>
 										</div>
-									</div>
+									</article>
 								</div>
 								<a href="#" class="galery__button-all button">Посмотреть все номера</a>
 							</div>
@@ -644,7 +642,7 @@
 				<section class="page__questions questions">
 					<div class="questions__container">
 						<h3 class="questions__title title title_temnyy">Популярные вопросы:</h3>
-						<div data-spollers data-one-spoller class="spollers">
+						<div data-spollers  class="spollers">
 							<details class="spollers__item">
 								<summary class="spollers__title">
 									<span>Какие удобства и услуги предлагает отель?</span>
@@ -694,28 +692,30 @@
 				</section>
 				<section class="page__contacts contacts">
 					<div class="contacts__container">
-						<h3 class="contacts__title">Контакты</h3>
+						<h3 class="contacts__title title">Контакты</h3>
 						<div class="contacts__content">
 							<div class="contacts__who">
-								<p class="contacts__title">Где мы находимся:</p>
+								<p class="contacts__subtitle">Где мы находимся:</p>
 								<p class="contacts__text subtitle">Республика Татарстан, Зеленодольский м.р-н, пгт. Нижние Вязовые, с. Мизиново, ул. Новая, зд. 37</p>
 							</div>
 							<div class="contacts__phone">
-								<p class="contacts__title">Как с нами связаться:</p>
+								<p class="contacts__subtitle">Как с нами связаться:</p>
 								<p class="contacts__subtext">Вопросы по бронированию номеров/домиков:</p>
 								<a href="tel:+79872262624" class="contacts__link subtitle">+7 (987) 226-26-24</a>
 								<p class="contacts__subtext contacts__subtext_two">Банкетный менеджер:</p>
 								<a href="tel:+79872269654" class="contacts__link subtitle">+7 (987) 226-96-54</a>
 							</div>
 							<div class="contacts__social">
-								<a href="#" class="contacts__link">
+								<p class="contacts__subtitle">Наши соцсети:</p>
+								<a href="#" class="contacts__link-social">
 									<img src="@img/main/contacts/watsup.svg" alt="watsapp">
 								</a>
-								<a href="#" class="contacts__link">
+								<a href="#" class="contacts__link-social">
 									<img src="@img/main/contacts/vk.svg" alt="вконтакте">
 								</a>
 							</div>
 						</div>
+						<p class="contacts__subtitle contacts__subtitle_who">Как добраться до загородного клуба «Свияга»:</p>
 						<div class="contacts__map">
 							<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A136cbe838e857007988c007e338b4f1656e9732117d34d8f7d20416159d69210&amp;source=constructor" width="1280" height="500" frameborder="0"></iframe>
 						</div>
