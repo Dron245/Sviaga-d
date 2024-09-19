@@ -2,9 +2,12 @@
 
 	&__welcome {
 		position: relative;
-		z-index: 2;
+		z-index: 0;
 		padding-top: 50px;
 		padding-bottom: 80px;
+		@media (max-width:$mobile){
+			 margin-top: 310px; 
+		}
 	}
 }
 .welcome {
@@ -43,13 +46,8 @@
 	}
 
 	&__button {
-		background-color: $mainColor;
-		color: $dop-temnyy;
 		padding-inline: 64px;
-		&:hover, &:active{
-			color: $mainColor;
-			background-color: $dop-temnyy;
-		}
+		
 	}
 
 	&__video {

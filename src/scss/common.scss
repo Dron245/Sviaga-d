@@ -4,13 +4,27 @@
 	font-weight: 700;
 	text-transform: uppercase;
 	text-wrap: balance;
+	&_temnyy.title {
+		color: $dop-temnyy
+	}
 	@include adaptiveValue("margin-bottom", 40, 20,0,1320,768);
 	@include adaptiveValue("font-size", 40, 20,0,1320,768);
+}
+.subtitle {
+	font-weight: 700;
+		@media (max-width:$mobile){
+			 color: $osnovnoy-temnyy;
+		}
+		@include adaptiveValue("font-size", 30, 18,0,1320,768);
+	
 }
 
 .text {
 	font-weight: 500;
 	line-height: 1.26;
+	&_temnyy.text {
+		color: $dop-temnyy;
+	}
 	@media (max-width:$mobileSmall){
 		 font-size: 15px; 
 	}
@@ -30,6 +44,14 @@
 	}
 	@media (max-width:$mobile){
 		 padding-block: 20px; 
+	}
+	&_invert.button {
+		background-color: $mainColor;
+		color: $dop-temnyy;
+		&:hover, &:active{
+			color: $mainColor;
+			background-color: $dop-temnyy;
+		}
 	}
 }
 
@@ -57,16 +79,31 @@
 	display: flex;
 	justify-content: center;
 	gap: 5px;
+	@include adaptiveValue("margin-top", 30, 10,0,1320,768);
 	.swiper-pagination-bullet {
+		cursor: pointer;
 		border-radius: 50%;
 		width: 15px;
-		height: 15px;
+		aspect-ratio: 1/1;
 		border: 1px solid $dop-svetlyy;
 		background-color: $osnovnoy-temnyy;
 		transition: background-color 0.5s;
+		@media (max-width:$mobileSmall){
+			 width: 10px; 
+		}
 	}
 
 	.swiper-pagination-bullet-active {
 		background-color: $dop-svetlyy;
+	}
+
+	&_invert.pagination {
+		.swiper-pagination-bullet {
+			border: 1px solid $dop-temnyy;
+		background-color: $mainColor;
+		}
+		.swiper-pagination-bullet-active {
+			background-color: $dop-temnyy;
+		}
 	}
 }

@@ -84,6 +84,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	background-color: $mainColor;
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
@@ -170,4 +171,9 @@ body {
 @import "home/appartaments.scss";
 @import "home/details.scss";
 @import "home/inclub.scss";
+@import "home/alpack.scss";
+@import "home/rooms.scss";
+@import "home/reviews.scss";
+@import "home/questions.scss";
+@import "home/contacts.scss";
 

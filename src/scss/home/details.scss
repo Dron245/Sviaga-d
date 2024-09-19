@@ -1,21 +1,25 @@
 	.details {
 		background-color: $osnovnoy-temnyy;
 		border-radius: 0 0 30px 30px;
-		@include adaptiveValue("padding-top", 80, 40,0,1320,768);
-		@include adaptiveValue("padding-bottom", 80, 20,0,1320,768);
+		@include adaptiveValue("padding-top", 80, 40, 0, 1320, 768);
+		@include adaptiveValue("padding-bottom", 80, 20, 0, 1320, 768);
+
 		&__body {
-			outline: 1px solid red;
 			margin-top: 100px;
 			display: grid;
 			gap: 30px;
 			grid-template-columns: repeat(4, 1fr);
 			position: relative;
-			@media (max-width:$tablet){
+
+			@media (max-width:$tablet) {
 				grid-template-columns: 1fr 1fr;
 			}
-			@media (max-width:$mobileSmall){
-				 grid-template-columns: 1fr; 
+
+			@media (max-width:$mobileSmall) {
+				grid-template-columns: 100%;
+				gap: 20px;
 			}
+
 			&::after {
 				content: '';
 				position: absolute;
@@ -27,6 +31,10 @@
 				top: 50%;
 				left: 50%;
 				translate: -50% -50%;
+
+				@media (max-width:$mobile) {
+					display: none;
+				}
 			}
 		}
 
@@ -37,72 +45,21 @@
 			position: relative;
 			display: grid;
 			place-items: center;
-	
-			
-	
-			span {
-				position: absolute;
-				top: 100%;
-				left: 50%;
-				translate: -50%;
-				background-color: $mainColor;
-				height: 30px;
-				width: 68.333333%;
-				/* 205/300 */
-	
-				&::before,
-				&::after {
-					content: "";
-					position: absolute;
-					width: 9.76%;
-					width: 20px;
-					height: 100%;
-					border-radius: 50%;
-					background-color: $osnovnoy-temnyy;
-				}
-	
-				&::before {
-					left: -10px;
-				}
-	
-				&::after {
-					right: -10px;
-				}
+
+			@media (max-width:$mobileSmall) {
+				aspect-ratio: 330/180;
 			}
-	
+
 			p {
 				text-align: center;
 				color: $osnovnoy-temnyy;
 				font-weight: 700;
 				margin-top: 10px;
-				@include adaptiveValue("font-size", 30, 20,0,1320,768);
+				@include adaptiveValue("font-size", 30, 20, 0, 1320, 768);
 			}
-	
+
 			&.r {
-				span {
-					left: 100%;
-					top: 50%;
-					translate: 0 -50%;
-					width: 30px;
-					height: 68.333333%;
-	
-					/* 205/300 */
-					&::before,
-					&::after {
-						width: 100%;
-						height: 20px;
-					}
-	
-					&::before {
-						left: 0;
-						top: -10px;
-					}
-	
-					&::after {
-						right: 0;
-						bottom: -10px;
-					}
-				}
+				span {}
 			}
 		}
 
@@ -112,83 +69,254 @@
 		}
 	}
 
+	.details {
 
-	
+		&__container {}
 
-	.b {
-		background-color: initial;
-		border: 2px solid $mainColor;
-	}
+		&__title {}
 
-	.c {
-		border-bottom-right-radius: 0;
-	}
+		&__body {}
 
-	.d {
-		border-top-left-radius: 0;
-	}
+		&__decor {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			translate: -50%;
+			background-color: $mainColor;
+			height: 30px;
+			width: 68.333333%;
 
-	.page {
+			@media (max-width:$mobileSmall) {
+				height: 20px;
+			}
 
-		&__details {
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				width: 9.76%;
+				width: 20px;
+				height: 100%;
+				border-radius: 50%;
+				background-color: $osnovnoy-temnyy;
+			}
+
+			&::before {
+				left: -10px;
+			}
+
+			&::after {
+				right: -10px;
+			}
 		}
-}
-.details {
 
-		&__container {
-		}
+		&__decor-r {
+			position: absolute;
+			background-color: $mainColor;
+			left: 100%;
+			top: 50%;
+			translate: 0 -50%;
+			width: 30px;
+			height: 68.333333%;
 
-		&__title {
-		}
+			/* 205/300 */
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				border-radius: 50%;
+				background-color: $osnovnoy-temnyy;
+				width: 100%;
+				height: 20px;
+			}
 
-		&__body {
+			&::before {
+				left: 0;
+				top: -10px;
+			}
+
+			&::after {
+				right: 0;
+				bottom: -10px;
+			}
 		}
 
 		&__item {
-
-			&_1 {
+			@media (max-width:$mobileSmall) {
+				border-radius: 20px;
 			}
 
+			&_1 {}
+
 			&_2 {
+				border-bottom-right-radius: 0;
+				background-color: initial;
+				border: 2px solid $mainColor;
+
 				p {
 					color: $mainColor;
+				}
+
+				@media (max-width:$mobileSmall) {
+					background-color: $mainColor;
+
+					p {
+						color: $osnovnoy-temnyy;
+					}
+
+					svg path {
+						fill: $osnovnoy-temnyy;
+					}
 				}
 			}
 
 			&_3 {
+				.details__decor {
+					display: none;
+				}
+
+				@media (max-width:$mobileSmall) {
+					background-color: initial;
+					outline: 2px solid $mainColor;
+					position: relative;
+
+					p {
+						color: $mainColor;
+					}
+
+					svg path {
+						fill: $mainColor
+					}
+
+					.details__decor {
+						display: block;
+						background-color: initial;
+						top: 100%;
+						border-top: 2px solid $osnovnoy-temnyy;
+						border-bottom: 2px solid $osnovnoy-temnyy;
+						z-index: 2;
+
+						&::before {
+							content: '';
+							border-right: 2px solid $mainColor;
+						}
+
+						&::after {
+							content: '';
+							border-left: 2px solid $mainColor;
+						}
+					}
+
+					.details__decor-r {
+						display: none;
+					}
+				}
 			}
 
 			&_4 {
+				@media (max-width:$mobileSmall) {
+					background-color: initial;
+					outline: 2px solid $mainColor;
+					position: relative;
+
+					p {
+						color: $mainColor;
+					}
+
+					svg path {
+						fill: $mainColor
+					}
+
+					.details__decor {
+						display: none;
+					}
+				}
 			}
 
 			&_5 {
+				.details__decor {
+					display: none;
+				}
+
+				@media (max-width:$mobileSmall) {
+					background-color: $mainColor;
+
+					p {
+						color: $osnovnoy-temnyy;
+					}
+
+					svg path {
+						fill: $osnovnoy-temnyy;
+					}
+
+					.details__decor-r {
+						display: none;
+					}
+
+					.details__decor {
+						display: block;
+					}
+				}
 			}
 
 			&_6 {
+				@media (max-width:$mobileSmall) {
+					background-color: $mainColor;
+
+					p {
+						color: $osnovnoy-temnyy;
+					}
+
+					svg path {
+						fill: $osnovnoy-temnyy;
+					}
+				}
 			}
 
 			&_7 {
+				border-top-left-radius: 0;
+				background-color: initial;
+				border: 2px solid $mainColor;
+
 				p {
 					color: $mainColor;
+				}
+
+				.details__decor {
+					display: none;
+				}
+
+				@media (max-width:$mobileSmall) {
+					position: relative;
+
+					.details__decor {
+						display: block;
+						background-color: initial;
+						top: 100%;
+						height: 22px;
+						border-top: 2px solid $osnovnoy-temnyy;
+						border-bottom: 2px solid $osnovnoy-temnyy;
+						z-index: 2;
+					}
+
 				}
 			}
 
 			&_8 {
+				@media (max-width:$mobileSmall) {
+					background-color: $osnovnoy-temnyy;
+					outline: 2px solid $mainColor;
+					position: relative;
+
+					p {
+						color: $mainColor;
+					}
+
+					svg path {
+						fill: $mainColor;
+					}
+
+				}
 			}
 		}
-
-		&__content {
-		}
-}
-.title {
-}
-.q {
-}
-.b {
-}
-.c {
-}
-.r {
-}
-.d {
-}
+	}

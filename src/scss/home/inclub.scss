@@ -1,0 +1,86 @@
+.page {
+
+	&__inclub {
+	}
+}
+.inclub {
+
+	&__container {
+		
+		border-radius: 20px;
+		@include adaptiveValue("margin-block", 80,40,0,1320,768 );
+	}
+
+	&__slider {
+		margin-inline: -15px;
+	}
+
+	&__wrapper {
+	}
+
+	&__slide {
+		display: flex;
+		background-color: $osnovnoy-temnyy;
+		border-radius: 20px;
+		overflow: hidden;
+		@media (max-width:$mobile){
+			 flex-direction: column;
+			 background-color: initial
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("padding", 50, 20,0,1320,768);
+	}
+
+	&__title {
+		@media (max-width:$mobile){
+			color: $osnovnoy-temnyy; 
+		}
+	}
+
+	&__subtitle {
+		margin-top: auto;
+		margin-bottom: 20px;
+		font-weight: 700;
+		@media (max-width:$mobile){
+			 margin-bottom: 10px; 
+			 color: $osnovnoy-temnyy;
+		}
+		@include adaptiveValue("font-size", 30, 18,0,1320,768);
+	}
+
+	&__text {
+		line-height: 1.26;
+		@media (max-width:$mobile){
+			color: $osnovnoy-temnyy; 
+		}
+	}
+
+	&__img {
+		flex: 0 0 31.782946%; /* 410/1290 */
+		img {
+		 width:100%;
+		 height:auto;
+		 @media (max-width:$mobile){
+			 border-radius: 20px; 
+			  
+		 }
+		}
+		@media (max-width:$mobile){
+			 margin-inline: 15px;
+		}
+	}
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.title {
+}
+.text {
+}

@@ -180,6 +180,7 @@ background: #fff;
 	top: 120%;
 	opacity: 0;
 	line-height: 1.04;
+	z-index: 3;
 	transition: top 0.3s, opacitiy 0.3s;
 	._active-dialog & {
 		top: 110%;

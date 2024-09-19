@@ -15,7 +15,7 @@
 
 	&__logo {
 		position: relative;
-		z-index: 2;
+		z-index: 4;
 		flex: 0 0 190px;
 		@include adaptiveValue("flex-basis", 190, 89,0,1290,360);
 		img {
@@ -28,6 +28,8 @@
 	}
 
 	&__actions {
+		position: relative;
+		
 	}
 }
 .container {
@@ -80,35 +82,61 @@
 		display: flex;
 		gap: 5px;
 		flex-wrap: nowrap;
+		@media (max-width:$tablet){
+			justify-content: flex-end;
+		}
 		img {
 			transition: rotate 0.3s;
 		}
-		&:hover{
-			img {
+		@media (any-hover: hover){
+			&:hover{
+				img {
 				rotate: -180deg;
 			}
+			}
+		}
+		._menu__item-active & img {
+			rotate: -180deg;
 		}
 	}
 
 	&__sublist {
 		border-radius: 10px;
-		width: calc(100% + 20px);
-		position: absolute;
 		display: grid;
 		gap: 10px;
-		left: 50%;
-		translate: -50% -5%;
-		top: -10px;
-		padding: 40px 10px 10px 10px;
-		box-shadow: 4px 4px 10px 0 rgba(91, 81, 71, 0.2);
 		z-index: 1;
 		background-color: $mainColor;
 		opacity: 0;
 		transition: translate 0.3s, opacity 0.3s;
-		.menu__item_group:hover & {
-			opacity: 1;
-			translate: -50% 0;
+		@media (min-width:$tablet){
+			translate: -50% -5%;
+			top: -10px;
+		width: calc(100% + 20px);
+			left: 50%;
+			box-shadow: 4px 4px 10px 0 rgba(91, 81, 71, 0.2);
+			position: absolute;
+			padding: 40px 10px 10px 10px;
+			  
 		}
+		@media (max-width:$tablet){
+			height: 0;
+			position: relative;
+			opacity: 0;
+		visibility: hidden;
+		}
+		&._sub-menu-open {
+			margin-top: 20px;
+			visibility: visible;
+			opacity: 1;
+			height: 100%;
+		}
+		@media (any-hover: hover){
+			.menu__item_group:hover & {
+				opacity: 1;
+				translate: -50% 0;
+			}
+		}
+		
 	}
 
 	&__subitem {
@@ -117,6 +145,9 @@
 	&__sublink {
 		font-weight: 500;
 		font-size: 15px;
+		@media (max-width:$tablet){
+			font-size: 20px;
+		}
 	}
 
 	&__icon {
@@ -126,22 +157,41 @@
 	margin-left: auto;
 	display: flex;
 	align-items: center;
-	gap: 20px;
 	position: relative;
-	z-index: 2;
+	z-index: 4;
+	.menu-open & svg path {
+		fill: $dop-temnyy;
+		stroke: $dop-temnyy;
+	}
 	@media (min-width:$mobile){
 		@include adaptiveValue("gap", 30, 5,0,1320,768);
 		 @include adaptiveValue("margin-right", 36, 26,0,1320,768); 
 	}
 	@media (max-width:$mobile){
-		 @include adaptiveValue("margin-right", 36, 15,0,768,360); 
+		@include adaptiveValue("gap", 26, 12,0,767.98,320);
+	}
+	@media (max-width:$tablet){
+		.menu-open & {
+			margin-right: 0;
+		}
+		 @include adaptiveValue("margin-right", 36, 10,0,768,360); 
+
 	}
 	&__link {
+		transition: scale 0.3s;
+		@media (any-hover: hover){
+			&:hover{
+				scale: 1.05;
+			}
+		}
 		@include adaptiveValue("width", 40, 24,0,1320,360);
 		img {
 		 width:100%;
 		 height:auto
 		}
+	}
+	& .icon-menu {
+		@include adaptiveValue("width", 40, 24,0,1320,360);
 	}
 
 	&__button {
@@ -157,418 +207,3 @@
 		}
 	}
 }
-.icon-menu {
-}
-
-// .header {
-// 	&__container {
-// 		display: flex;
-// 		align-items: center;
-// 		justify-content: space-between;
-// 	}
-
-// 	&__logo {
-// 		max-width: 190px;
-
-// 		@media (max-width: (767.98px)) {
-// 			max-width: 89px
-// 		}
-// 	}
-
-// 	&__nav {
-// 		display: flex;
-// 		align-items: center;
-// 		justify-content: space-between;
-// 		flex-wrap: wrap;
-
-// 		.nav__item {
-// 			position: relative;
-// 			padding: 10px;
-// 			border-radius: 10px;
-
-// 			>a {
-// 				display: block;
-// 				font-size: 18px;
-// 				font-weight: 700;
-// 				line-height: 18.72px;
-// 				text-align: left;
-// 				color: #50453B;
-// 				position: relative;
-
-// 				&::after {
-// 					display: block;
-// 					position: absolute;
-// 					bottom: -4px;
-// 					left: 0;
-// 					/*изменить на right:0;, чтобы изменить направление подчёркивания */
-// 					width: 0;
-// 					/*задаём длинну линии до наведения курсора*/
-// 					height: 2px;
-// 					/*задаём ширину линии*/
-// 					background-color: var(--color-main);
-// 					/*задаём цвет линии*/
-// 					content: "";
-// 					transition: width 0.3s ease-out;
-// 				}
-
-// 				&:hover {
-// 					color: var(--color-main);
-
-// 					&:after {
-// 						width: 100%;
-// 					}
-// 				}
-
-// 			}
-
-// 			&.accardeon {
-// 				position: relative;
-// 				box-shadow: 4px 0px 5px 0px #5B514733;
-// 				border-radius: 10px 10px 0 0;
-// 				width: fit-content;
-
-// 				// max-width: 140px;
-// 				.accardeon__content {
-// 					position: absolute;
-// 					min-width: 100%;
-// 					max-width: 100%;
-// 					background-color: var(--color-white);
-// 					margin-top: -4px;
-// 					z-index: 1;
-// 					box-shadow: 4px 4px 4px 0px #5B514733;
-// 					border-radius: 0 0 10px 10px;
-// 				}
-
-// 				&:has(.accardeon-hidden) {
-// 					box-shadow: unset;
-
-// 				}
-
-// 			}
-
-// 			.accardeon__head {
-// 				display: flex;
-// 				align-items: center;
-// 				gap: 5px;
-
-// 				span {
-// 					display: block;
-// 					// font-family: "Involve";
-// 					font-size: 18px;
-// 					font-weight: 700;
-// 					line-height: 18.72px;
-// 					text-align: left;
-// 					color: #50453B;
-// 				}
-// 			}
-
-// 			.accardeon__content {
-// 				position: absolute;
-// 				left: 0;
-// 				top: 100%;
-// 				padding: 10px;
-// 				padding-top: 0;
-
-// 				.option {
-// 					// font-family: Involve;
-// 					font-size: 15px;
-// 					font-weight: 500;
-// 					line-height: 15.6px;
-// 					text-align: left;
-
-// 				}
-// 			}
-// 		}
-// 	}
-
-// 	&__block {
-// 		display: flex;
-// 		align-items: center;
-// 		justify-content: space-between;
-// 		padding: 15px 46px;
-// 		gap: 20px;
-
-// 		@media (max-width: (767.98px)) {
-// 			gap: 10px;
-// 		}
-
-// 		.watsupp {
-// 			width: 100%;
-// 			max-width: 40px;
-// 			aspect-ratio: 1;
-// 			display: flex;
-// 			align-items: center;
-// 			justify-content: center;
-// 			transition: all .3s ease-in-out;
-
-// 			@media (max-width: (767.98px)) {
-// 				max-width: 24px;
-// 			}
-
-// 			svg {
-// 				width: 100%;
-// 			}
-
-// 			&:hover {
-// 				scale: 1.1;
-// 			}
-// 		}
-
-// 		.to-book {
-// 			height: 67px;
-// 			width: 233px;
-// 			display: flex;
-// 			align-items: center;
-// 			justify-content: center;
-// 			background-color: var(--color-green);
-// 			color: var(--color-white);
-// 			cursor: pointer;
-// 			font-size: 19px;
-// 			font-weight: 700;
-// 			line-height: 19.76px;
-// 			text-align: left;
-// 			border-radius: 10px;
-// 			transition: all .3s ease-in-out;
-
-// 			&:hover {
-// 				background-color: #426F37;
-// 			}
-// 		}
-// 	}
-// }
-
-// @media (max-width: (767.98px)) {
-// 	.header {
-// 		z-index: 0;
-// 		padding-top: 0;
-
-// 		&__container {
-// 			display: flex;
-// 			align-items: center;
-// 			justify-content: space-between;
-// 			position: relative;
-// 		}
-
-// 		&__nav {
-// 			display: flex;
-// 			align-items: center;
-// 			justify-content: space-between;
-// 			flex-direction: column;
-// 			flex-wrap: wrap;
-// 			position: absolute;
-// 			width: 0px;
-// 			overflow: hidden;
-
-// 			.nav__item {
-// 				position: relative;
-// 				padding: 10px;
-// 				border-radius: 10px;
-// 				display: flex;
-// 				flex-direction: column;
-
-// 				>a {
-// 					display: block;
-// 					font-size: 18px;
-// 					font-weight: 700;
-// 					line-height: 18.72px;
-// 					text-align: left;
-// 					color: #50453B;
-// 					position: relative;
-
-// 					&::after {
-// 						display: block;
-// 						position: absolute;
-// 						bottom: -4px;
-// 						left: 0;
-// 						/*изменить на right:0;, чтобы изменить направление подчёркивания */
-// 						width: 0;
-// 						/*задаём длинну линии до наведения курсора*/
-// 						height: 2px;
-// 						/*задаём ширину линии*/
-// 						background-color: var(--color-main);
-// 						/*задаём цвет линии*/
-// 						content: "";
-// 						transition: width 0.3s ease-out;
-// 					}
-
-// 					&:hover {
-// 						color: var(--color-main);
-
-// 						&:after {
-// 							width: 100%;
-// 						}
-// 					}
-
-// 				}
-
-// 				&.accardeon {
-// 					position: relative;
-// 					box-shadow: unset;
-// 					border-radius: unset;
-// 					width: fit-content;
-// 					display: flex;
-// 					flex-direction: column;
-// 					align-items: center;
-
-// 					// max-width: 140px;
-// 					.accardeon__content {
-// 						position: relative;
-// 						min-width: 100%;
-// 						max-width: 100%;
-// 						background-color: var(--color-white);
-// 						margin-top: unset;
-// 						z-index: 1;
-// 						box-shadow: unset;
-// 						border-radius: 0 0 10px 10px;
-// 					}
-
-// 					&:has(.accardeon-hidden) {
-// 						box-shadow: unset;
-
-// 					}
-
-// 				}
-
-// 				.accardeon__head {
-// 					display: flex;
-// 					align-items: center;
-// 					gap: 5px;
-
-// 					span {
-// 						display: block;
-// 						// font-family: "Involve";
-// 						font-size: 18px;
-// 						font-weight: 700;
-// 						line-height: 18.72px;
-// 						text-align: left;
-// 						color: #50453B;
-// 					}
-// 				}
-
-// 				.accardeon__content {
-// 					position: relative;
-// 					left: 0;
-// 					top: 100%;
-// 					padding: unset;
-// 					padding-top: 0;
-
-// 					.option {
-// 						// font-family: Involve;
-// 						font-size: 15px;
-// 						font-weight: 500;
-// 						line-height: 15.6px;
-// 						text-align: left;
-
-// 					}
-// 				}
-// 			}
-// 		}
-
-// 		.nav {
-// 			width: 0px;
-// 			overflow: hidden;
-// 			padding: unset;
-// 			top: 0;
-// 			right: 0;
-// 			padding: 0;
-// 			position: absolute;
-// 			transform: translateX(100%);
-// 			border-radius: 0 0 0 20px;
-// 			transition: all 0.3s ease-in-out;
-// 			opacity: 0;
-// 			background-color: var(--color-white);
-// 			z-index: 2000;
-
-// 			&.active {
-// 				width: calc(100%);
-// 				opacity: 1;
-// 				transform: translateX(0);
-// 				background-color: var(--color-white);
-// 				z-index: 2000;
-// 				padding: 20px 15px;
-
-// 				.header__mobile {
-// 					&::after {
-// 						content: unset;
-// 					}
-// 				}
-// 			}
-// 		}
-
-// 		&__block {
-// 			display: flex;
-// 			align-items: center;
-// 			justify-content: space-between;
-// 			padding: 9px 15px;
-// 			padding-right: 50px;
-// 			gap: 20px;
-
-// 			@media (max-width: (767.98px)) {
-// 				padding-right: 5px;
-// 			}
-
-// 			;
-
-// 			.watsupp {
-// 				width: 40px;
-// 				aspect-ratio: 1;
-// 				display: flex;
-// 				align-items: center;
-// 				justify-content: center;
-// 				transition: all .3s ease-in-out;
-
-// 				svg {
-// 					width: 100%;
-// 				}
-
-// 				&:hover {
-// 					scale: 1.1;
-// 				}
-// 			}
-
-// 			.to-book {
-// 				height: 67px;
-// 				width: 233px;
-// 				display: flex;
-// 				align-items: center;
-// 				justify-content: center;
-// 				background-color: var(--color-green);
-// 				color: var(--color-white);
-// 				cursor: pointer;
-// 				font-size: 19px;
-// 				font-weight: 700;
-// 				line-height: 19.76px;
-// 				text-align: left;
-// 				border-radius: 10px;
-// 				transition: all .3s ease-in-out;
-
-// 				&:hover {
-// 					background-color: #426F37;
-// 				}
-// 			}
-
-// 			.burger {
-// 				display: flex;
-// 				flex-direction: column;
-// 				gap: 2px;
-// 				align-items: flex-end;
-// 				justify-content: space-between;
-// 				width: 24px;
-// 				aspect-ratio: 1;
-// 				padding: 7px 5px;
-// 				cursor: pointer;
-
-// 				span {
-// 					width: 100%;
-// 					height: 2px;
-// 					background-color: var(--color-white);
-// 					border-radius: 1px;
-
-// 					&:nth-child(3) {
-// 						width: 60%;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
