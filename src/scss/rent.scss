@@ -7,14 +7,19 @@
 
 	&__content {
 		.select-item & {
-			background: url('@img/rent/bg-rent.png') center / cover no-repeat;
-			@include adaptiveValue("height", 532, 242, 0, 1320, 360);
+			padding-block: 100px;
+			height: initial;
+			background: $osnovnoy-temnyy;
+			margin-top: 0;
+			border-top-right-radius: 0;
+			// @include adaptiveValue("height", 532, 242, 0, 1320, 360);
 		}
 	}
 
 	&__body {
 		.select-item & {
-			@include adaptiveValue("bottom", 90, 27, 0, 1320, 768);
+			position: relative;
+			// @include adaptiveValue("bottom", 90, 27, 0, 1320, 768);
 
 			@media (max-width:$tablet) {
 				bottom: 20px;
@@ -28,6 +33,7 @@
 
 	&__title {
 		.select-item & {
+			padding-top: 0px;
 			@media (max-width:$tablet) {
 				margin-bottom: 15px;
 			}

@@ -7,10 +7,17 @@
 	@media (max-width:$tablet){
 		padding-block: 15px;
 	}
+	.select-item & {
+		padding-block: 0;
+	}
 	&__container {
 		display: flex;
 		align-items: center;
 		gap: 30px;
+		.select-item & {
+			justify-content: space-between;
+			gap: 0;
+		}
 	}
 
 	&__logo {
@@ -25,11 +32,29 @@
 	}
 
 	&__menu {
+		.select-item & {
+		// align-self: stretch;
+		}
 	}
 
 	&__actions {
 		position: relative;
-		
+		.select-item & {
+			margin-left: 0;
+			align-self: stretch;
+		background-color: $osnovnoy-temnyy;
+		border-radius: 20px 20px 0 0;
+		&::before{
+			content:'';
+			position: absolute;
+			right: 100%;
+			bottom: 0;
+			background-color: #ff000000;
+    height: 100%;
+    width: 100%;
+    border-radius: 0 0 20px 0;
+		}
+		}
 	}
 }
 .container {
@@ -166,6 +191,12 @@
 	@media (min-width:$mobile){
 		@include adaptiveValue("gap", 30, 5,0,1320,768);
 		 @include adaptiveValue("margin-right", 36, 26,0,1320,768); 
+		 .select-item & {
+		margin-right: 0;
+				 @include adaptiveValue("padding-right", 36, 26,0,1320,768); 
+				 @include adaptiveValue("padding-left", 36, 26,0,1320,768); 
+
+	}
 	}
 	@media (max-width:$mobile){
 		@include adaptiveValue("gap", 26, 12,0,767.98,320);
@@ -175,7 +206,11 @@
 			margin-right: 0;
 		}
 		 @include adaptiveValue("margin-right", 36, 10,0,768,360); 
-
+		.select-item & {
+		margin-right: 0;
+		 @include adaptiveValue("padding-right", 36, 10,0,768,360); 
+		 @include adaptiveValue("padding-left", 36, 10,0,768,360); 
+	}
 	}
 	&__link {
 		transition: scale 0.3s;
