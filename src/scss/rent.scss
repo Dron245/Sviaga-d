@@ -1,0 +1,164 @@
+.banner {
+	.select-item & {
+		padding-bottom: 0;
+	}
+
+	&__container {}
+
+	&__content {
+		.select-item & {
+			background: url('@img/rent/bg-rent.png') center / cover no-repeat;
+			@include adaptiveValue("height", 532, 242, 0, 1320, 360);
+		}
+	}
+
+	&__body {
+		.select-item & {
+			@include adaptiveValue("bottom", 90, 27, 0, 1320, 768);
+
+			@media (max-width:$tablet) {
+				bottom: 20px;
+			}
+
+			@media (max-width:$mobile) {
+				top: 100px;
+			}
+		}
+	}
+
+	&__title {
+		.select-item & {
+			@media (max-width:$tablet) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	&__form {
+		.select-item & {
+			@media (min-width:$mobile) {
+				background-color: initial;
+			}
+		}
+	}
+}
+
+//========================================================================================================================================================
+
+.page {
+	&__rooms {
+		&_one {
+			margin-top: 40px;
+		}
+	}
+}
+
+//========================================================================================================================================================
+
+.details {
+	.select-item & {
+		background-color: inherit;
+	}
+
+	&__container {}
+
+	&__title {
+		.select-item & {
+			color: $dop-temnyy;
+		}
+	}
+
+	&__body {
+	&::after{
+	.select-item & {
+
+	border: 2px solid $osnovnoy-temnyy;		
+	}
+	}
+	}
+
+	.select-item &__item {
+		&_1, &_3, &_4, &_5, &_6, &_8 {
+		@media (min-width:$mobile){
+			  background-color: $osnovnoy-temnyy;
+			p {
+				color: $mainColor;
+				}
+				svg path {
+					fill: $mainColor;
+				}
+			}
+		}
+
+		&_2, &_7 {
+		@media (min-width:$mobile){
+			  border: 2px solid $osnovnoy-temnyy;
+				p {color: $osnovnoy-temnyy;}
+				svg path {fill:$osnovnoy-temnyy}
+			}
+		@media (max-width:$mobile){
+			 border: none; 
+		}
+		}
+
+		&_1,&_2,&_5,&_6 {
+			@media (max-width:$mobile){
+				background-color: $osnovnoy-temnyy;
+				p {color: $mainColor;}
+				svg path {
+					fill: $mainColor;
+				}
+			}
+		}
+
+		&_3,&_4,&_7,&_8 {
+			@media (max-width:$mobile){
+				background-color: $mainColor;
+				outline: 2px solid $osnovnoy-temnyy;
+				p {color: $osnovnoy-temnyy}
+				svg path {
+					fill: $osnovnoy-temnyy
+				}
+			}
+		}
+		&_3, &_7 {
+			@media (max-width:$mobile){
+				.details__decor[class] {
+					background-color: $mainColor;
+					border-color: $mainColor;
+					&::before,&::after{
+						border-color: $osnovnoy-temnyy;
+					}
+				}
+			}
+	}
+		
+	}
+
+	&__decor {
+		.select-item & {
+			background-color: $osnovnoy-temnyy;
+
+			&::before,
+			&::after {
+				background-color: $mainColor;
+			}
+		}
+	}
+
+	&__content {}
+
+	.select-item &__decor-r {
+		background-color: $osnovnoy-temnyy;
+
+		&::before,
+		&::after {
+			background-color: $mainColor;
+		}
+	}
+}
+
+//========================================================================================================================================================
+.select-item .questions{
+	@include adaptiveValue("margin-bottom", 80, 40,0,1320,768);
+}

@@ -29,6 +29,11 @@
 		 font-size: 15px; 
 	}
 }
+
+.subtext {
+	font-weight: 500;
+	@include adaptiveValue("font-size", 25, 18,0,1320,768);
+}
 .button {
 	font-weight: 700;
 	font-size: 19px;
@@ -46,12 +51,21 @@
 	@media (max-width:$mobile){
 		 padding-block: 20px; 
 	}
-	&_invert.button {
+	&_light.button {
 		background-color: $mainColor;
 		color: $dop-temnyy;
 		&:hover, &:active{
 			color: $mainColor;
 			background-color: $dop-temnyy;
+		}
+	}
+
+	&_temnyy.button {
+		background-color: $dop-temnyy;
+		color: $mainColor;
+		&:hover, &:active{
+			color: $dop-temnyy;
+			background-color: $mainColor;
 		}
 	}
 }

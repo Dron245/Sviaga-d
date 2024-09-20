@@ -10,9 +10,7 @@
 		background: url('@img/main/bg.png') center / cover no-repeat;
 		z-index: 1;
 		@include adaptiveValue("height",700 ,242,0,1320,360 );
-		@media (max-width:$tablet){
-			// margin-top: -82px;
-		}
+		
 		@media (min-width:$tablet){
 			@include adaptiveValue("margin-top", -122, -96,0,1320,992);
 			  
@@ -20,7 +18,9 @@
 		@media (max-width:$tablet) {
 			@include adaptiveValue("margin-top", -80, -47,0,991.98,360);
 		}
-		
+		@media (max-width:$mobile){
+			box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.2);
+		}
 		@include adaptiveValue("border-radius", 20, 10,0,1320,360);
 	}
 
@@ -31,6 +31,7 @@
 		bottom: -16px;
 		translate: -50%;
 		@media (max-width:$mobile){
+			padding-inline: 15px;
 			width: 100%;
 			 @include adaptiveValue("top", 300, 150,0,768,360); 
 		}
@@ -44,7 +45,6 @@
 		@media (min-width:$mobile){
 			padding-top: 450px;
 			margin-bottom: 30px;
-			  
 		}
 		@media (max-width:$mobile){
 			 @include adaptiveValue("margin-bottom", 30, 5,0,768,360); 
@@ -60,7 +60,16 @@
 		gap: 20px;
 		background-color: $mainColor;
 		line-height: 1.04;
+		@media (min-width: $mobile) and (max-width: $tablet){
+			 display: grid;
+			 grid-template-columns: 1fr 1fr;
+			 & > *[class] {
+				width: 100%;
+			 } 
+		}
 		@media (max-width:$mobile){
+			padding: 10px;
+			margin-inline: -15px;
 			 flex-direction: column;
 			 & > *[class] {
 				width: initial;
@@ -116,12 +125,6 @@ background: #fff;
 	}
 }
 
-.check-in {
-}
-.open-calendar {
-}
-.check-out {
-}
 .quantity-banner {
 	cursor: pointer;
 	display: flex;

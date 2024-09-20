@@ -198,6 +198,10 @@
 		background-color: $osnovnoy-temnyy;
 		padding-inline: 42px;
 		padding-block: 23px;
+		.select-item & {
+			background-color: $mainColor;
+			color: $dop-temnyy;
+		}
 		@media (min-width:$mobile){
 			 @include adaptiveValue("padding-inline", 42, 10,0,1320,768); 
 			 @include adaptiveValue("padding-block", 23, 7,0,1320,768); 

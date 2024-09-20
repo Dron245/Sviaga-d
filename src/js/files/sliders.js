@@ -108,6 +108,27 @@ function initSliders() {
 		});
 	}
 
+	if (document.querySelector('.gastronom__slider')) { //Указываем класс нужного слайдера
+		new Swiper('.gastronom__slider', { //Указываем класс нужного слайдера
+			modules: [Pagination, Autoplay],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			//autoHeight: true,
+			speed: 800,
+			loop: true,
+			// autoplay: {
+			// 	delay: 3000,
+			// 	disableOnInteraction: false,
+			// },
+			pagination: {
+				el: '.gastronom__pagination',
+				clickable: true,
+			},
+		});
+	}
+
 }
 //Скролл на базе слайдера (по классу swiper scroll для оболочки слайдера)
 function initSlidersScroll() {
