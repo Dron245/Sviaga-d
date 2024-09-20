@@ -1,6 +1,5 @@
 .header {
 	background-color: $mainColor;
-	// background-color: blue;
 	color: $dop-temnyy;
 	padding-block: 30px;
 	line-height: 1.04;
@@ -9,6 +8,10 @@
 	}
 	.select-item & {
 		padding-block: 0;
+		margin-top: 30px;
+		@media (max-width:$mobile){
+			 margin-top: 15px; 
+		}
 	}
 	&__container {
 		display: flex;
@@ -23,8 +26,21 @@
 	&__logo {
 		position: relative;
 		z-index: 4;
-		flex: 0 0 190px;
-		@include adaptiveValue("flex-basis", 190, 89,0,1290,360);
+		flex-basis: 190px;
+		margin-right: 15px;
+		.select-item & {
+			margin-bottom: 10px;
+@media (max-width:$mobile){
+			 flex-basis: 150px; 
+		}
+		@media (max-width:$mobileSmall){
+			 flex-basis: 90px; 
+		}
+		}
+		.bg-image & {
+
+			@include adaptiveValue("flex-basis", 190, 89,0,1290,360);
+		}
 		img {
 		 width:100%;
 		 height:auto
@@ -44,17 +60,37 @@
 			align-self: stretch;
 		background-color: $osnovnoy-temnyy;
 		border-radius: 20px 20px 0 0;
+		padding-top: 10px;
 		&::before{
 			content:'';
 			position: absolute;
 			right: 100%;
 			bottom: 0;
-			background-color: #ff000000;
-    height: 100%;
-    width: 100%;
-    border-radius: 0 0 20px 0;
+			background-color: $mainColor;
+			height: 100%;
+			width: 20px;
+			border-radius: 0 0 20px 0;
+			z-index: 2;
+			@media (max-width:$mobile){
+				 width: 10px;
+				 border-radius: 0 0 10px 0;
+				}
+			}
+			&::after{
+				content:'';
+				position: absolute;
+				right: 100%;
+				bottom: 0;
+				width: 20px;
+				height: 100%;
+				background-color: $osnovnoy-temnyy;
+				z-index: 1;
+				@media (max-width:$mobile){
+					 width: 10px; 
+				}
+			}
 		}
-		}
+		
 	}
 }
 .container {
@@ -202,8 +238,13 @@
 		@include adaptiveValue("gap", 26, 12,0,767.98,320);
 	}
 	@media (max-width:$tablet){
-		.menu-open & {
-			margin-right: 0;
+		.menu-open .select-item & {
+			// z-index: 2;
+			background-color: $mainColor;
+			&::before,&::after{
+				content:'';
+				background-color: $mainColor;
+			}
 		}
 		 @include adaptiveValue("margin-right", 36, 10,0,768,360); 
 		.select-item & {

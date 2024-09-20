@@ -12,6 +12,11 @@
 			background: $osnovnoy-temnyy;
 			margin-top: 0;
 			border-top-right-radius: 0;
+			@media (max-width:$mobile){
+				  
+				padding-top: 80px;
+				padding-bottom: 0;
+			}
 			// @include adaptiveValue("height", 532, 242, 0, 1320, 360);
 		}
 	}
@@ -26,7 +31,7 @@
 			}
 
 			@media (max-width:$mobile) {
-				top: 100px;
+				top: 0px;
 			}
 		}
 	}

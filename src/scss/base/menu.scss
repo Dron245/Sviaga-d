@@ -13,17 +13,40 @@
 			top: 0;
 			overflow: auto;
 			background-color: $mainColor;
-			padding: toRem(70) toRem(15) toRem(15) toRem(30);
+			padding: toRem(82) toRem(36) toRem(15) toRem(30);
 			transition: right 0.3s;
+			@media (max-width:$tablet){
+				.select-item & {
+
+					padding-top: 150px; 
+				}
+			}
 			&::before {
 				content: "";
 				position: fixed;
 				width: 100%;
-				height: toRem(70);
+				// height: toRem(82);
 				right: -100%;
-				top: 0;
+				top: 30px;
+				background-color: $mainColor;
 				transition: right 0.3s;
 				z-index: 2;
+				@media (max-width:$tablet){
+					.select-item & {
+						height: 82px;
+					}
+				}
+				@media (max-width:$mobile){
+					 top: 15px;
+					 .select-item & {
+						height: 67px;
+					}
+				}
+				@media (max-width:$mobileSmall){
+					.select-item & {
+						height: 44px;
+					} 
+				}
 			}
 			.menu-open & {
 				right: 0;
