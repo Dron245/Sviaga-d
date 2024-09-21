@@ -1,27 +1,11 @@
-.page {
-
-	&__banner {
-	}
-
-	&__contacts {
-	}
+.contacts-page .banner__title {
+	margin-bottom: 0;
 }
-.banner {
 
-	&__container {
-	}
-
-	&__content {
-	}
-
-	&__body {
-	}
-
-	&__title {
-	}
-}
-.contacts {
-
+.contacts-page .contacts {
+	padding-block: 0;
+	background-color: initial;
+	color: $dop-temnyy;
 	&__container {
 	}
 
@@ -64,7 +48,4 @@
 	&__map {
 	}
 }
-.title {
-}
-.subtitle {
-}
+

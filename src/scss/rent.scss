@@ -3,43 +3,60 @@
 		padding-bottom: 0;
 	}
 
-	&__container {}
+	&__container {
+	}
 
 	&__content {
 		.select-item & {
-			padding-block: 100px;
+			
 			height: initial;
 			background: $osnovnoy-temnyy;
 			margin-top: 0;
 			border-top-right-radius: 0;
-			@media (max-width:$mobile){
-				  
-				padding-top: 80px;
-				padding-bottom: 0;
+			@include adaptiveValue("padding-block", 100, 25,0,1320,360);
+			&.rent .banner__body {
+				max-width: 100%;
+				left: 50%;
+				translate: -50%;
+				bottom: -16px;
+				padding-inline: initial;
 			}
-			// @include adaptiveValue("height", 532, 242, 0, 1320, 360);
+			@media (max-width: $mobile) {
+				&.rent {
+					padding-top: 80px;
+					padding-bottom: 0;
+					& .banner__body {
+					}
+				}
+			}
 		}
 	}
 
 	&__body {
 		.select-item & {
 			position: relative;
-			// @include adaptiveValue("bottom", 90, 27, 0, 1320, 768);
-
-			@media (max-width:$tablet) {
+			top: initial;
+			bottom: initial;
+			left: initial;
+			translate: initial;
+			padding-inline: 50px;
+			max-width: 75%;
+			@media (max-width: $tablet) {
 				bottom: 20px;
 			}
 
-			@media (max-width:$mobile) {
+			@media (max-width: $mobile) {
 				top: 0px;
+				padding-inline: 15px;
 			}
+		
 		}
 	}
 
 	&__title {
 		.select-item & {
 			padding-top: 0px;
-			@media (max-width:$tablet) {
+			@media (max-width: $tablet) {
 				margin-bottom: 15px;
 			}
 		}
@@ -47,7 +64,7 @@
 
 	&__form {
 		.select-item & {
-			@media (min-width:$mobile) {
+			@media (min-width: $mobile) {
 				background-color: initial;
 			}
 		}
@@ -71,7 +88,8 @@
 		background-color: inherit;
 	}
 
-	&__container {}
+	&__container {
+	}
 
 	&__title {
 		.select-item & {
@@ -80,70 +98,107 @@
 	}
 
 	&__body {
-	&::after{
-	.select-item & {
-
-	border: 2px solid $osnovnoy-temnyy;		
-	}
-	}
+		&::after {
+			.select-item & {
+				border: 2px solid $osnovnoy-temnyy;
+			}
+		}
 	}
 
 	.select-item &__item {
-		&_1, &_3, &_4, &_5, &_6, &_8 {
-		@media (min-width:$mobile){
-			  background-color: $osnovnoy-temnyy;
-			p {
-				color: $mainColor;
-				}
-				svg path {
-					fill: $mainColor;
-				}
-			}
-		}
-
-		&_2, &_7 {
-		@media (min-width:$mobile){
-			  border: 2px solid $osnovnoy-temnyy;
-				p {color: $osnovnoy-temnyy;}
-				svg path {fill:$osnovnoy-temnyy}
-			}
-		@media (max-width:$mobile){
-			 border: none; 
-		}
-		}
-
-		&_1,&_2,&_5,&_6 {
-			@media (max-width:$mobile){
+		&_1,
+		&_3,
+		&_4,
+		&_5,
+		&_6,
+		&_8 {
+			@media (min-width: $mobileSmall) {
 				background-color: $osnovnoy-temnyy;
-				p {color: $mainColor;}
+				p {
+					color: $mainColor;
+				}
 				svg path {
 					fill: $mainColor;
 				}
 			}
 		}
 
-		&_3,&_4,&_7,&_8 {
-			@media (max-width:$mobile){
+		&_2,
+		&_7 {
+			@media (min-width: $mobileSmall) {
+				border: 2px solid $osnovnoy-temnyy;
+				p {
+					color: $osnovnoy-temnyy;
+				}
+				svg path {
+					fill: $osnovnoy-temnyy;
+				}
+			}
+			@media (max-width: $mobileSmall) {
+				border: none;
+			}
+		}
+
+		&_1,
+		&_2,
+		&_5,
+		&_6 {
+			@media (max-width: $mobileSmall) {
+				background-color: $osnovnoy-temnyy;
+				p {
+					color: $mainColor;
+				}
+				svg path {
+					fill: $mainColor;
+				}
+			}
+		}
+
+		&_3,
+		&_4,
+		&_7,
+		&_8 {
+			@media (max-width: $mobileSmall) {
 				background-color: $mainColor;
 				outline: 2px solid $osnovnoy-temnyy;
-				p {color: $osnovnoy-temnyy}
+				p {
+					color: $osnovnoy-temnyy;
+				}
 				svg path {
-					fill: $osnovnoy-temnyy
+					fill: $osnovnoy-temnyy;
 				}
 			}
 		}
-		&_3, &_7 {
-			@media (max-width:$mobile){
+		&_5 {
+			svg path {
+				stroke: $mainColor;
+			}
+		}
+		&_3,
+		&_7 {
+			@media (max-width: $mobileSmall) {
 				.details__decor[class] {
 					background-color: $mainColor;
 					border-color: $mainColor;
-					&::before,&::after{
+					&::before,
+					&::after {
 						border-color: $osnovnoy-temnyy;
+					}
+					&::after {
+						top: -3px;
+						height: 22px;
+						background: url("@img/main/details/circkle2.png") 0 0 / contain no-repeat;
+						rotate: 180deg;
+					}
+					&::before {
+						top: -3px;
+						height: 22px;
+						background: url("@img/main/details/circkle2.png") 0 0 / contain no-repeat;
+						rotate: 0deg;
 					}
 				}
 			}
-	}
-		
+		}
 	}
 
 	&__decor {
@@ -157,7 +212,8 @@
 		}
 	}
 
-	&__content {}
+	&__content {
+	}
 
 	.select-item &__decor-r {
 		background-color: $osnovnoy-temnyy;
@@ -170,6 +226,6 @@
 }
 
 //========================================================================================================================================================
-.select-item .questions{
-	@include adaptiveValue("margin-bottom", 80, 40,0,1320,768);
+.select-item .questions {
+	@include adaptiveValue("margin-bottom", 80, 40, 0, 1320, 768);
 }
