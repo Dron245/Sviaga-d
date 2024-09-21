@@ -3,14 +3,15 @@
 	color: $dop-temnyy;
 	padding-block: 30px;
 	line-height: 1.04;
-	@media (max-width:$tablet){
+	
+	@media (max-width: $tablet) {
 		padding-block: 15px;
 	}
 	.select-item & {
 		padding-block: 0;
 		margin-top: 30px;
-		@media (max-width:$mobile){
-			 margin-top: 15px; 
+		@media (max-width: $mobile) {
+			margin-top: 15px;
 		}
 	}
 	&__container {
@@ -21,6 +22,10 @@
 			justify-content: space-between;
 			gap: 0;
 		}
+		.header-temnyy & {
+			background-color: $osnovnoy-temnyy;
+			border-radius: 20px;
+		}
 	}
 
 	&__logo {
@@ -30,54 +35,69 @@
 		margin-right: 15px;
 		.select-item & {
 			margin-bottom: 10px;
-@media (max-width:$mobile){
-			 flex-basis: 150px; 
+			@media (max-width: $mobile) {
+				flex-basis: 150px;
+			}
+			@media (max-width: $mobileSmall) {
+				flex-basis: 90px;
+			}
 		}
-		@media (max-width:$mobileSmall){
-			 flex-basis: 90px; 
-		}
+		:not(.header-temnyy) & {
+			.header__logo-l {display: none;}
 		}
 		.bg-image & {
-
-			@include adaptiveValue("flex-basis", 190, 89,0,1290,360);
+			@include adaptiveValue("flex-basis", 190, 89, 0, 1290, 360);
+		}
+		.header-temnyy & {
+			.header__logo-t {display: none;}
+			.header__logo-l {display: block;}
+			.menu-open & {
+				.header__logo-t {display: block;}
+				.header__logo-l {display: none;}
+			}
 		}
 		img {
-		 width:100%;
-		 height:auto
+			width: 100%;
+			height: auto;
 		}
 	}
 
 	&__menu {
 		.select-item & {
-		// align-self: stretch;
+			// align-self: stretch;
 		}
 	}
 
 	&__actions {
 		position: relative;
+		&::before,&::after{
+			.header-temnyy & {
+				display: none;
+			}
+		}
 		.select-item & {
 			margin-left: 0;
 			align-self: stretch;
-		background-color: $osnovnoy-temnyy;
-		border-radius: 20px 20px 0 0;
-		padding-top: 10px;
-		&::before{
-			content:'';
-			position: absolute;
-			right: 100%;
-			bottom: 0;
-			background-color: $mainColor;
-			height: 100%;
-			width: 20px;
-			border-radius: 0 0 20px 0;
-			z-index: 2;
-			@media (max-width:$mobile){
-				 width: 10px;
-				 border-radius: 0 0 10px 0;
+			background-color: $osnovnoy-temnyy;
+			border-radius: 20px 20px 0 0;
+			padding-top: 10px;
+			&::before {
+				content: "";
+				position: absolute;
+				right: 100%;
+				bottom: 0;
+				background-color: $mainColor;
+				height: 100%;
+				width: 20px;
+				border-radius: 0 0 20px 0;
+				z-index: 2;
+				@media (max-width: $mobile) {
+					width: 10px;
+					border-radius: 0 0 10px 0;
 				}
 			}
-			&::after{
-				content:'';
+			&::after {
+				content: "";
 				position: absolute;
 				right: 100%;
 				bottom: 0;
@@ -85,12 +105,11 @@
 				height: 100%;
 				background-color: $osnovnoy-temnyy;
 				z-index: 1;
-				@media (max-width:$mobile){
-					 width: 10px; 
+				@media (max-width: $mobile) {
+					width: 10px;
 				}
 			}
 		}
-		
 	}
 }
 .container {
@@ -112,16 +131,20 @@
 	&__item {
 		&_group {
 			position: relative;
+			&:hover{
+				.header-temnyy & .menu__subtitle svg path {
+					fill: $dop-temnyy;
+				}
+			}
 		}
 	}
 
 	&__link {
 		font-weight: 700;
 		font-size: 18px;
-		/* line-height: 19px; */
 		position: relative;
-		&::after{
-			content:'';
+		&::after {
+			content: "";
 			position: absolute;
 			left: 0;
 			bottom: -5px;
@@ -129,8 +152,14 @@
 			background-color: $dop-temnyy;
 			width: 0;
 			transition: width 0.3s;
+			.header-temnyy & {
+				background-color: $mainColor;
+			}
+			.header-temnyy .menu__item_group:hover & {
+				background-color: $dop-temnyy;
+			}
 		}
-		&:hover{
+		&:hover {
 			&::after {
 				width: 100%;
 			}
@@ -143,19 +172,25 @@
 		display: flex;
 		gap: 5px;
 		flex-wrap: nowrap;
-		@media (max-width:$tablet){
+		@media (max-width: $tablet) {
 			justify-content: flex-end;
 		}
-		img {
+		svg {
 			transition: rotate 0.3s;
-		}
-		@media (any-hover: hover){
-			&:hover{
-				img {
-				rotate: -180deg;
+			.header-temnyy & path {
+				fill: $mainColor;
+				.menu-open & {
+					fill: $dop-temnyy;
+				}
 			}
-			}
 		}
+		// @media (any-hover: hover) {
+			&:hover {
+				svg {
+					rotate: -180deg;
+				}
+			}
+		// }
 		._menu__item-active & img {
 			rotate: -180deg;
 		}
@@ -168,52 +203,53 @@
 		z-index: 1;
 		background-color: $mainColor;
 		opacity: 0;
-		transition: translate 0.3s, opacity 0.3s;
-		@media (min-width:$tablet){
+		visibility: hidden;
+		transition:
+			translate 0.3s,
+			opacity 0.3s;
+		@media (min-width: $tablet) {
 			translate: -50% -5%;
 			top: -10px;
-		width: calc(100% + 20px);
+			width: calc(100% + 20px);
 			left: 50%;
 			box-shadow: 4px 4px 10px 0 rgba(91, 81, 71, 0.2);
 			position: absolute;
 			padding: 40px 10px 10px 10px;
-			  
 		}
-		@media (max-width:$tablet){
+		@media (max-width: $tablet) {
 			height: 0;
 			position: relative;
 			opacity: 0;
-		visibility: hidden;
+			visibility: hidden;
 		}
 		&._sub-menu-open {
 			margin-top: 20px;
-			visibility: visible;
 			opacity: 1;
+			visibility: visible;
 			height: 100%;
 		}
-		@media (any-hover: hover){
+		// @media (any-hover: hover) {
 			.menu__item_group:hover & {
 				opacity: 1;
+				visibility: visible;
 				translate: -50% 0;
+				.menu-open & {
+					translate: 0;
+					text-align: right;
+				}
 			}
-		}
-		
-	}
-
-	&__subitem {
+		// }
 	}
 
 	&__sublink {
 		font-weight: 500;
 		font-size: 15px;
-		@media (max-width:$tablet){
+		@media (max-width: $tablet) {
 			font-size: 20px;
 		}
 	}
-
-	&__icon {
-	}
 }
+
 .actions-header {
 	margin-left: auto;
 	display: flex;
@@ -224,50 +260,49 @@
 		fill: $dop-temnyy;
 		stroke: $dop-temnyy;
 	}
-	@media (min-width:$mobile){
-		@include adaptiveValue("gap", 30, 5,0,1320,768);
-		 @include adaptiveValue("margin-right", 36, 26,0,1320,768); 
-		 .select-item & {
-		margin-right: 0;
-				 @include adaptiveValue("padding-right", 36, 26,0,1320,768); 
-				 @include adaptiveValue("padding-left", 36, 26,0,1320,768); 
-
+	@media (min-width: $mobile) {
+		@include adaptiveValue("gap", 30, 5, 0, 1320, 768);
+		@include adaptiveValue("margin-right", 36, 26, 0, 1320, 768);
+		.select-item & {
+			margin-right: 0;
+			@include adaptiveValue("padding-right", 36, 26, 0, 1320, 768);
+			@include adaptiveValue("padding-left", 36, 26, 0, 1320, 768);
+		}
 	}
+	@media (max-width: $mobile) {
+		@include adaptiveValue("gap", 26, 12, 0, 767.98, 320);
 	}
-	@media (max-width:$mobile){
-		@include adaptiveValue("gap", 26, 12,0,767.98,320);
-	}
-	@media (max-width:$tablet){
+	@media (max-width: $tablet) {
 		.menu-open .select-item & {
-			// z-index: 2;
 			background-color: $mainColor;
-			&::before,&::after{
-				content:'';
+			&::before,
+			&::after {
+				content: "";
 				background-color: $mainColor;
 			}
 		}
-		 @include adaptiveValue("margin-right", 36, 10,0,768,360); 
+		@include adaptiveValue("margin-right", 36, 10, 0, 768, 360);
 		.select-item & {
-		margin-right: 0;
-		 @include adaptiveValue("padding-right", 36, 10,0,768,360); 
-		 @include adaptiveValue("padding-left", 36, 10,0,768,360); 
-	}
+			margin-right: 0;
+			@include adaptiveValue("padding-right", 36, 10, 0, 768, 360);
+			@include adaptiveValue("padding-left", 36, 10, 0, 768, 360);
+		}
 	}
 	&__link {
 		transition: scale 0.3s;
-		@media (any-hover: hover){
-			&:hover{
+		// @media (any-hover: hover) {
+			&:hover {
 				scale: 1.05;
 			}
-		}
-		@include adaptiveValue("width", 40, 24,0,1320,360);
+		// }
+		@include adaptiveValue("width", 40, 24, 0, 1320, 360);
 		img {
-		 width:100%;
-		 height:auto
+			width: 100%;
+			height: auto;
 		}
 	}
 	& .icon-menu {
-		@include adaptiveValue("width", 40, 24,0,1320,360);
+		@include adaptiveValue("width", 40, 24, 0, 1320, 360);
 	}
 
 	&__button {
@@ -278,12 +313,12 @@
 			background-color: $mainColor;
 			color: $dop-temnyy;
 		}
-		@media (min-width:$mobile){
-			 @include adaptiveValue("padding-inline", 42, 10,0,1320,768); 
-			 @include adaptiveValue("padding-block", 23, 7,0,1320,768); 
+		@media (min-width: $mobile) {
+			@include adaptiveValue("padding-inline", 42, 10, 0, 1320, 768);
+			@include adaptiveValue("padding-block", 23, 7, 0, 1320, 768);
 		}
-		@media (max-width:$tablet){
-			 display: none; 
+		@media (max-width: $tablet) {
+			display: none;
 		}
 	}
 }

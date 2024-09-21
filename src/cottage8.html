@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+	@@include('html/_head.htm',{ "title":"Коттедж №8" })
+	<body>
+		<div class="wrapper select-item header-temnyy">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="page__banner banner">
+					<div class="banner__container">
+						<div class="banner__content">
+							<div class="banner__body">
+								<p class="banner__title">
+									заБронируйте проживание по оптимальной стоимости
+								</p>
+								<form action="#" class="banner__form">
+									<div class="banner__item item-banner">
+										<div class="item-banner__content">
+											<div class="item-banner__title">Заезд</div>
+											<div class="item-banner__date check-in">19.07.2024</div>
+										</div>
+										<input
+											class="item-banner__input"
+											type="hidden"
+											name="check-in"
+											id=""
+										/>
+										<div class="item-banner__img open-calendar">
+											<img src="@img/main/solar_calendar-linear.svg" alt="календарь" />
+										</div>
+									</div>
+									<div class="banner__item item-banner">
+										<div class="item-banner__content">
+											<div class="item-banner__title">Выезд</div>
+											<div class="item-banner__date check-out">19.07.2024</div>
+										</div>
+										<input
+											class="item-banner__input"
+											type="hidden"
+											name="check-in"
+											id=""
+										/>
+										<input type="hidden" name="exit" id="" />
+										<div class="item-banner__img open-calendar">
+											<img src="@img/main/solar_calendar-linear.svg" alt="календарь" />
+										</div>
+									</div>
+									<div class="banner__quantity quantity-banner">
+										<div class="quantity-banner__body">
+											<p class="quantity-banner__title">Гости</p>
+											<div class="quantity-banner__content">
+												<span class="quantity-banner__adult">2</span>
+												<span class="quantity-banner__adult-text">взрослых</span>
+												,
+												<span class="quantity-banner__children">1</span>
+												<span class="quantity-banner__children-text">ребёнок</span>
+											</div>
+										</div>
+										<div class="quantity-banner__img">
+											<img src="@img/main/arrow-banner.svg" alt="Image" />
+										</div>
+										<div class="quantity-banner__dialog dialog">
+											<p class="dialog__title">Количество гостей</p>
+											<div class="dialog__main">
+												<div class="dialog__group">
+													<p class="dialog__group-title">Взрослые</p>
+													<div data-quantity class="quantity">
+														<button
+															data-quantity-minus
+															type="button"
+															class="quantity__button quantity__button--minus"
+														></button>
+														<div class="quantity__input">
+															<input
+																class="input-q-a"
+																data-quantity-value
+																autocomplete="off"
+																type="text"
+																name="form[]"
+																value="1"
+															/>
+														</div>
+														<button
+															data-quantity-plus
+															type="button"
+															class="quantity__button quantity__button--plus"
+														></button>
+													</div>
+												</div>
+												<div class="dialog__group">
+													<p class="dialog__group-title">Дети младше 14 лет</p>
+													<div data-quantity class="quantity">
+														<button
+															data-quantity-minus
+															type="button"
+															class="quantity__button quantity__button--minus"
+														></button>
+														<div class="quantity__input">
+															<input
+																class="input-q-c"
+																data-quantity-value
+																autocomplete="off"
+																type="text"
+																name="form[]"
+																value="1"
+															/>
+														</div>
+														<button
+															data-quantity-plus
+															type="button"
+															class="quantity__button quantity__button--plus"
+														></button>
+													</div>
+												</div>
+											</div>
+											<button type="button" class="button dialog__button">Готово</button>
+										</div>
+									</div>
+									<button type="button" class="banner__button button button_temnyy">
+										Найти котедж
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

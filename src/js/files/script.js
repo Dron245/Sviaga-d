@@ -43,9 +43,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
 		// Открытие сабменю
 
-		if (targetElement.closest(".menu__item") && targetElement.closest("header") && !targetElement.closest(".menu__item").classList.contains("_menu__item-active")) {
+		if (document.querySelector('.menu-open') && targetElement.closest(".menu__item") && targetElement.closest("header") && !targetElement.closest(".menu__item").classList.contains("_menu__item-active")) {
 			// targetElement.classList.toggle('_open');
 			// document.querySelector('.menu__user-data') ? targetElement.closest('.menu__user-data').classList.toggle('_user-open') : null
+			console.log(1);
+			
 			const menuItemMobile = targetElement.closest('.menu__list').querySelectorAll('.menu__item')
 			menuItemMobile.forEach(element => {
 				element.classList.remove('_menu__item-active')
@@ -60,6 +62,8 @@ window.addEventListener("DOMContentLoaded", () => {
 			targetElement.closest("header") &&
 			targetElement.closest(".menu__item").classList.contains("_menu__item-active") && 
 			!targetElement.closest('.sublist-menu__link')) {
+				console.log(2);
+				
 			targetElement.closest(".menu__item").classList.remove("_menu__item-active");
 			targetElement.closest(".menu__item").querySelector(".menu__sublist").classList.remove("_sub-menu-open")
 		}

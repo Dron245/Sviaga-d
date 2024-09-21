@@ -60,7 +60,6 @@
 }
 
 .column {
-	// outline: 1px solid red;
 
 	@media (max-width:$pc) {
 		flex: 0 0 30%;
@@ -79,12 +78,22 @@
 		a {
 			font-weight: 500;
 			font-size: 17px;
+			&:not(:last-child) {
+				margin-bottom: 10px;
+				@media (max-width:$mobile){
+					 display: block; 
+				}
+				@media (max-width:$mobileSmall){
+					margin-bottom: 5px; 
+			  }
+			}
 		}
 	}
 
 	&__item {
 		&:not(:last-child) {
 			margin-bottom: 10px;
+			
 		}
 
 		.text {

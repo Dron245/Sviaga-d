@@ -17,8 +17,10 @@
 			transition: right 0.3s;
 			@media (max-width:$tablet){
 				.select-item & {
-
-					padding-top: 150px; 
+					@media (min-width: $mobile) and (max-width: $tablet){
+						  
+						padding-top: 120px; 
+					}
 				}
 			}
 			&::before {
@@ -75,6 +77,15 @@
 		}
 		@media (max-width:$mobileSmall){
 			 font-size: 18px; 
+		}
+		.header-temnyy & {
+			color: $mainColor;
+			.menu-open & {
+				color: $dop-temnyy;
+			}
+		}
+		.header-temnyy .menu__item_group:hover & {
+			color: $dop-temnyy;
 		}
 	}
 }

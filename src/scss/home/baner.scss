@@ -21,7 +21,6 @@
 		@media (max-width: $mobile) {
 			box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.2);
 		}
-		// @include adaptiveValue("border-radius", 20, 10,0,1320,360);
 	}
 
 	&__body {
@@ -147,18 +146,6 @@
 	&__content {
 		font-weight: 700;
 		@include adaptiveValue("font-size", 18, 15, 0, 1320, 768);
-	}
-
-	&__adult {
-	}
-
-	&__adult-text {
-	}
-
-	&__children {
-	}
-
-	&__children-text {
 	}
 
 	&__img {

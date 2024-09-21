@@ -1,0 +1,150 @@
+.page {
+
+	&__banner {
+	}
+}
+.banner {
+
+	&__container {
+	}
+
+	&__content {
+		.header-temnyy & {
+			background: $mainColor;
+		}
+	}
+
+	&__body {
+		.header-temnyy &[class] {
+			left: 0;
+			translate: 0;
+			max-width: initial;
+			padding-inline: 0;
+		}
+	}
+
+	&__title {
+		.header-temnyy & {
+			color: $dop-temnyy;
+		}
+	}
+
+	&__form {
+		.header-temnyy & {
+			padding: 0;
+		}
+	}
+
+	&__item {
+		.header-temnyy & {
+			background-color: $mainColor;
+			box-shadow: none;
+			border: 1px solid $dop-temnyy;
+		}
+	}
+
+	&__quantity {
+		.header-temnyy & {
+			background-color: $mainColor;
+			box-shadow: none;
+			border: 1px solid $dop-temnyy;
+		}
+	}
+
+	&__button {
+	}
+}
+.rent {
+}
+.item-banner {
+
+	&__content {
+	}
+
+	&__title {
+	}
+
+	&__date {
+	}
+
+	&__input {
+	}
+
+	&__img {
+	}
+}
+.check-in {
+}
+.open-calendar {
+}
+.check-out {
+}
+.quantity-banner {
+
+	&__body {
+	}
+
+	&__title {
+	}
+
+	&__content {
+	}
+
+	&__adult {
+	}
+
+	&__adult-text {
+	}
+
+	&__children {
+	}
+
+	&__children-text {
+	}
+
+	&__img {
+	}
+
+	&__dialog {
+	}
+}
+.dialog {
+
+	&__title {
+	}
+
+	&__main {
+	}
+
+	&__group {
+	}
+
+	&__group-title {
+	}
+
+	&__button {
+	}
+}
+.quantity {
+
+	&__button {
+	}
+
+	&__button--minus {
+	}
+
+	&__input {
+	}
+
+	&__button--plus {
+	}
+}
+.input-q-a {
+}
+.input-q-c {
+}
+.button {
+
+	&_temnyy {
+	}
+}
