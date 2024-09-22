@@ -56,7 +56,7 @@
 		flex-direction: column;
 		height: 100%;
 		box-shadow: 4px 4px 10px 0 rgba(80, 69, 59, 0.2);
-		background: var(--osnovnoy-svetlyy);
+		background: $mainColor;
 		border-radius: 20px;
 		&:not(:last-child) {margin-bottom: toRem(30);}
 		@media (max-width: $mobile) {
@@ -76,6 +76,10 @@
 	}
 
 	&__slide {
+		@media (max-width:$mobile){
+			 border-radius: 10px;
+			 overflow: hidden; 
+		}
 		img {
 			width: 100%;
 			height: auto;

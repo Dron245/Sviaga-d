@@ -3,7 +3,7 @@
 	&__contacts {
 		border-radius: 30px;
 		background-color: $osnovnoy-temnyy;
-		@include adaptiveValue("margin-block", 80, 40, 0, 1320, 768);
+		@include adaptiveValue("margin-top", 80, 40, 0, 1320, 768);
 		@include adaptiveValue("padding-block", 80, 40, 0, 1320, 768);
 		@media (max-width:$mobile){
 			 border-radius: 20px; 

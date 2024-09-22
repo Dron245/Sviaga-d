@@ -25,6 +25,15 @@
 		.header-temnyy & {
 			background-color: $osnovnoy-temnyy;
 			border-radius: 20px;
+			@media (min-width:$tablet){
+				 height: 97px; 
+			}
+			@media (max-width:$mobile){
+				 border-radius: 10px; 
+			}
+			@media (max-width:$mobileSmall){
+				 padding-block: 5px; 
+			}
 		}
 	}
 
@@ -39,8 +48,14 @@
 				flex-basis: 150px;
 			}
 			@media (max-width: $mobileSmall) {
-				flex-basis: 90px;
+				// :not(.header-temnyy) {
+
+					flex-basis: 90px;
+				// }
 			}
+		}
+		.header-temnyy.select-item & {
+			margin-bottom: 0;
 		}
 		:not(.header-temnyy) & {
 			.header__logo-l {display: none;}
@@ -81,6 +96,7 @@
 			background-color: $osnovnoy-temnyy;
 			border-radius: 20px 20px 0 0;
 			padding-top: 10px;
+			
 			&::before {
 				content: "";
 				position: absolute;
@@ -256,6 +272,9 @@
 	align-items: center;
 	position: relative;
 	z-index: 4;
+	.header-temnyy &[class] {
+		padding-top: 0;
+	}
 	.menu-open & svg path {
 		fill: $dop-temnyy;
 		stroke: $dop-temnyy;
@@ -316,6 +335,9 @@
 		@media (min-width: $mobile) {
 			@include adaptiveValue("padding-inline", 42, 10, 0, 1320, 768);
 			@include adaptiveValue("padding-block", 23, 7, 0, 1320, 768);
+			.header-temnyy &[class] {
+				padding-block: 23px;
+			}
 		}
 		@media (max-width: $tablet) {
 			display: none;

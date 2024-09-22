@@ -1,9 +1,9 @@
 //====================================================================================================
 .footer {
-	
 	border-radius: 30px 30px 0 0;
 	background: $dop-temnyy;
 	padding-block: 50px;
+	@include adaptiveValue("margin-top", 80, 40,0,1320,768);
 	hr {
 		height: 1px;
 		background-color: $mainColor;

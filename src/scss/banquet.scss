@@ -1,0 +1,112 @@
+.page {
+
+	&__banquet {
+		@include adaptiveValue("margin-top", 60, 40,0,1320,768);
+	}
+}
+.banquet {
+
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		column-gap: 2.325581%; /* 30/1290 */
+		flex-wrap: wrap;
+		@media (min-width:$mobile){
+			row-gap: toRem(80);
+			  
+		}
+		@media (max-width:$mobile){
+			 row-gap: toRem(20); 
+		}
+	}
+
+	&__item {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		// outline: 1px solid red;
+		border-radius: 20px;
+		overflow: hidden;
+		padding: 20px;
+		@media (min-width:$mobile){
+			@include adaptiveValue("height", 610, 300,0,1320,768);
+		}
+		@media (max-width:$mobile){
+			 border-radius: 10px;
+			 padding: 10px; 
+			 @include adaptiveValue("height", 610, 300,0,768,360);
+		}
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		&_1 {
+			@media (min-width:$mobile){
+				  
+				flex: 0 0 57.364341%;
+			}
+		}
+
+		&_2 {
+			@media (min-width:$mobile){
+				  
+				transform: translateY(50px);
+				flex: 0 0 40.310078%;
+			}
+		}
+
+		&_3 {
+			@media (min-width:$mobile){
+				  
+				transform: translateY(-50px);
+				flex: 0 0 40.310078%;
+			}
+		}
+
+		&_4 {
+			@media (min-width:$mobile){
+				  
+				flex: 0 0 57.364341%;
+			}
+		}
+	}
+
+	&__title {
+		position: relative;
+		margin-bottom: 30px;
+	}
+
+	&__text {
+		position: relative;
+	}
+
+	&__bottom {
+		margin-top: auto;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		
+		.arrow img {
+			position: relative;
+		}
+	}
+
+	&__button {
+		@include adaptiveValue("padding-inline", 60, 20,0,1320,768 );
+	}
+}
+.subtitle {
+}
+.subtext {
+}
+.button {
+}
+.arrow {
+}

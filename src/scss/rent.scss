@@ -58,8 +58,11 @@
 			padding-top: 0px;
 			@media (max-width: $tablet) {
 				margin-bottom: 15px;
-				margin-left: 15px;
 			}
+		}
+		.select-item .rent & {
+			margin-left: 15px;
+
 		}
 	}
 
@@ -227,6 +230,4 @@
 }
 
 //========================================================================================================================================================
-.select-item .questions {
-	@include adaptiveValue("margin-bottom", 80, 40, 0, 1320, 768);
-}
+

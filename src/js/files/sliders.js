@@ -63,7 +63,7 @@ function initSliders() {
 			spaceBetween: 0,
 			//autoHeight: true,
 			speed: 800,
-			loop: true,
+			// loop: true,
 			// autoplay: {
 			// 	delay: 3000,
 			// 	disableOnInteraction: false,
@@ -72,6 +72,7 @@ function initSliders() {
 				el: '.galery__pagination',
 				clickable: true,
 			},
+			
 		});
 	}
 	
@@ -84,10 +85,10 @@ function initSliders() {
 			//autoHeight: true,
 			speed: 800,
 			loop: true,
-			// autoplay: {
-			// 	delay: 3000,
-			// 	disableOnInteraction: false,
-			// },
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
 			pagination: {
 				el: '.reviews__pagination',
 				clickable: true,
@@ -118,12 +119,33 @@ function initSliders() {
 			//autoHeight: true,
 			speed: 800,
 			loop: true,
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.gastronom__pagination',
+				clickable: true,
+			},
+		});
+	}
+
+	if (document.querySelector('.description__slider')) { //Указываем класс нужного слайдера
+		new Swiper('.description__slider', { //Указываем класс нужного слайдера
+			modules: [Pagination, Autoplay],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			//autoHeight: true,
+			speed: 800,
+			loop: true,
 			// autoplay: {
 			// 	delay: 3000,
 			// 	disableOnInteraction: false,
 			// },
 			pagination: {
-				el: '.gastronom__pagination',
+				el: '.description__pagination',
 				clickable: true,
 			},
 		});

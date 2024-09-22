@@ -78,7 +78,6 @@
 
 .menus {
 	@include adaptiveValue("margin-top", 80, 40,0,1320,768);
-	@include adaptiveValue("margin-bottom", 80, 40,0,1320,768);
 	&__container {
 	}
 

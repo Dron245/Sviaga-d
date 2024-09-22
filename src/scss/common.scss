@@ -13,7 +13,6 @@
 .subtitle {
 	font-weight: 700;
 		@media (max-width:$mobile){
-			//  color: $osnovnoy-temnyy;
 		}
 		@include adaptiveValue("font-size", 30, 18,0,1320,768);
 	
@@ -86,10 +85,12 @@
 		}
 	}
 	@media (max-width:$mobile){
-		 width: 50px; 
+		 width: 50px;
+		 height: 50px;
 	}
 	@media (max-width:$mobileSmall){
-		 width: 30px; 
+		 width: 30px;
+		 height: 30px;
 	}
 }
 
