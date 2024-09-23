@@ -53,6 +53,23 @@
 		}
 	}
 
+	&__item {
+		.select-item & {
+			flex: 0 0 23.361345%; /* 278/1190 */
+		}
+	}
+
+	&__quantity {
+		.select-item & {
+			flex: 0 0 23.361345%; /* 278/1190 */
+		}
+	}
+
+	&__button {
+		.select-item & {
+			flex: 0 0 27.394958%; /* 326/1190 */
+		}
+	}
 	&__title {
 		.select-item & {
 			padding-top: 0px;
@@ -90,6 +107,8 @@
 .details {
 	.select-item & {
 		background-color: inherit;
+		padding-top: 90px;
+		padding-bottom: 0;
 	}
 
 	&__container {
@@ -102,6 +121,9 @@
 	}
 
 	&__body {
+		.select-item & {
+			margin-top: 0;
+		}
 		&::after {
 			.select-item & {
 				border: 2px solid $osnovnoy-temnyy;

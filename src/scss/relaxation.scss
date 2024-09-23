@@ -39,7 +39,11 @@
 	}
 
 	&__item {
-
+		.relaxation & {
+			@media (max-width:$mobile){
+				 width: 100%; 
+			}
+		}
 		&_1 {
 		}
 
@@ -54,6 +58,9 @@
 	}
 
 	&__bottom {
+		.relaxation & {
+			justify-content: flex-end;
+		}
 	}
 
 	&__text {

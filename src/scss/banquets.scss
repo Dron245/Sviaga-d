@@ -1,7 +1,7 @@
 .page {
 
 	&__banquet {
-		@include adaptiveValue("margin-top", 60, 40,0,1320,768);
+		@include adaptiveValue("margin-top", 80, 40,0,1320,768);
 	}
 }
 .banquet {
@@ -108,38 +108,106 @@
 .banquet-room {
 
 	&__body {
-	}
-
-	&__img {
+		border-radius: 20px;
+		overflow: hidden;
+		position: relative;
+		padding: 30px;
+		background: url('@img/banquet/b-shater.jpg') center / cover no-repeat;
+		@media (max-width:$mobile){
+			 border-radius: 10px; 
+			 padding: 10px;
+		}
 	}
 
 	&__title {
+		margin-bottom: 30px;
 	}
 
 	&__text {
+		@media (min-width:$mobile){
+			 max-width: 82%; 
+		}
+	}
+	.banquet__bottom {
+		@media (min-width:$mobile){
+			  
+			margin-top: 184px;
+		}
+		@media (max-width:$mobile){
+			 @include adaptiveValue("margin-top", 184, 84,0,768,360); 
+		}
+
 	}
 }
 
 .banquet-form {
+	
+	&__body {
+		background-color: $osnovnoy-temnyy;
+		display: flex;
+		border-radius: 20px;
+		overflow: hidden;
+		align-items: center;
+		@include adaptiveValue("gap", 30, 10,0,1320,768);
+		@media (min-width:$mobile){
+			 @include adaptiveValue("padding-left", 50, 20,0,1320,768); 
+		}
+		@media (max-width:$mobile){
+			 border-radius: 10px;
+			 flex-direction: column;
+		}
+	}
 
 	&__content {
+		@media (max-width:$mobile){
+			 padding: 10px; 
+		}
 	}
 
 	&__title {
+		margin-bottom: 30px;
 	}
 
 	&__text {
+		margin-bottom: 30px;
 	}
 
 	&__form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
 	}
 
 	&__input {
+		border-radius: 10px;
+		background-color: $mainColor;
+		padding: 20px;
+		color: $dop-temnyy;
+		@media (max-width:$mobileSmall){
+			 padding: 10px; 
+		}
 	}
 
 	&__button {
+		grid-column: 1/3;
+		@media (max-width:$mobileSmall){
+			  padding-block: 10px;
+		}
+	}
+
+	&__politica {
+		margin-top: 20px;
+		line-height: 1.26;
+		font-size: 15px;
 	}
 
 	&__img {
+		
+		img {
+		 width:100%;
+		 height:auto;
+		 aspect-ratio: 1/1;
+		 object-fit: cover;
+		}
 	}
 }

@@ -1,33 +1,5 @@
 .page {
 
-	&__banner {
-	}
-}
-.banner {
-
-	&__container {
-	}
-
-	&__content {
-	}
-
-	&__body {
-	}
-
-	&__title {
-	}
-
-	&__text {
-	}
-}
-.subtext {
-}
-
-
-//========================================================================================================================================================
-
-.page {
-
 	&__cottage {
 	}
 }
@@ -37,6 +9,9 @@
 	}
 
 	&__body {
+		&.house-light {
+			background-color: initial;
+		}
 	}
 
 	&__main {
@@ -68,6 +43,12 @@
 	}
 
 	&__pay {
+		background-color: $osnovnoy-temnyy;
+		color: $mainColor;
+		border-radius: 20px;
+		padding: 15px;
+		padding-right: 10px;
+		// text-wrap: balance;
 	}
 }
 .swiper {
@@ -86,7 +67,7 @@
 .costs {
 
 	&__cost {
-
+		
 		&_budni {
 		}
 
@@ -110,23 +91,49 @@
 	}
 }
 .data-house {
-
+	display: flex;
+	flex-direction: column;
 	&__title {
+		&:not(:last-child) {margin-bottom: toRem(20);}
 	}
 
 	&__targets {
-	}
-
-	&__target {
-
-		&_big {
+		display: flex;
+		justify-content: space-between;
+		gap: 7px;
+		flex-wrap: wrap;
+		&:not(:last-child) {margin-bottom: toRem(30);}
+		&_first[class] {
+			margin-bottom: 10px;
 		}
 	}
 
+	&__target {
+		display:grid ;
+		white-space: nowrap;
+		 place-items:center;
+		 background-color: $osnovnoy-temnyy;
+		 border-radius: 20px;
+		 color: $mainColor;
+		 padding: 10px;
+		 flex: 1 0 32%;
+		 @include adaptiveValue("font-size", 16, 12,0,1320,992);
+		&_big {
+			flex: 1 0 49%; /* 260/520 */
+		}
+	}
+
+	&__bottom {
+		margin-top: auto;
+	}
 	&__text {
+		@include adaptiveValue("font-size", 23, 18,0,1320,768);
+		&:not(:last-child) {margin-bottom: toRem(20);}
 	}
 
 	&__link {
+		width: 100%;
+		text-align: center;
 	}
 }
 .button {
