@@ -78,10 +78,10 @@
 		a {
 			font-weight: 500;
 			font-size: 17px;
+			display: block; 
 			&:not(:last-child) {
 				margin-bottom: 10px;
 				@media (max-width:$mobile){
-					 display: block; 
 				}
 				@media (max-width:$mobileSmall){
 					margin-bottom: 5px; 

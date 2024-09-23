@@ -12,6 +12,18 @@
 
 	&__body {
 	}
+
+	&__link {
+		width: 100%;
+		text-align: center;
+		margin-top: 90px;
+		@media (max-width:$tablet){
+			margin-top: 40px;
+		}
+		@media (max-width:$mobileSmall){
+			 margin-top: 20px; 
+		}
+	}
 }
 .title {
 	&_temnyy {
@@ -52,6 +64,7 @@
 	}
 
 	&__item {
+		cursor: pointer;
 		display: flex;
 		flex-direction: column;
 		height: 100%;

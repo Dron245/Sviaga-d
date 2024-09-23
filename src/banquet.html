@@ -1,61 +1,106 @@
 <!doctype html>
-<html lang="en">
-	@@include('html/_head.htm',{ "title":"Банкетные залы" })
+<html lang="ru">
+	@@include('html/_head.htm',{ "title":"Банкетный зал" })
 	<body>
-		<div class="wrapper select-item">
+		<div class="wrapper select-item header-temnyy">
 			@@include('html/_header.htm',{})
 			<main class="page">
 				<section class="page__banner banner">
 					<div class="banner__container">
 						<div class="banner__content">
 							<div class="banner__body">
-								<h1 class="banner__title ">Выберите место для проведения мероприятия</h1>
+								<h1 class="banner__title">Банкетный зал «Свияга»</h1>
 								<p class="banner__text subtext">
-									Мы предлагаем своим гостям широкий выбор банкетных залов на любой вкус и бюджет
+									Просторный зал, вмещающий до 80 гостей, оснащен всем необходимым для проведения банкета, свадьбы или
+									корпоративного мероприятия
 								</p>
 							</div>
 						</div>
 					</div>
 				</section>
-				<section class="page__banquet banquet">
+				<section class="page__cottage cottage">
+					<div class="cottage__container">
+						<div class="cottage__body house-light">
+							<div class="cottage__main description">
+								<div class="description__slider swiper">
+									<div class="description__wrapper swiper-wrapper">
+										<div class="description__slide swiper-slide">
+											<img src="@img/banquet/b-z-sv.jpg" alt="Банкетный зал Свияга" />
+										</div>
+										<div class="description__slide swiper-slide">
+											<img src="@img/banquet/b-z-sv.jpg" alt="Банкетный зал Свияга" />
+										</div>
+										<div class="description__slide swiper-slide">
+											<img src="@img/banquet/b-z-sv.jpg" alt="Банкетный зал Свияга" />
+										</div>
+									</div>
+									<div class="description__pagination pagination galery__pagination"></div>
+								</div>
+								<div class="description__costs costs">
+									<div class="costs__cost costs__cost_budni">
+										<p class="costs__text subtext">Вместимость:</p>
+										<p class="costs__number title">До 80 человек</p>
+									</div>
+									<div class="costs__cost costs__cost_vyh">
+										<p class="costs__text subtext">Средний чек на человека:</p>
+										<p class="costs__number title">от 3400 ₽</p>
+									</div>
+								</div>
+								<div class="description__pay">
+									<p class="subtext">Схема оплаты:</p>
+									<p class="subtitle">минимальный депозит закрытия зала 280 000 ₽</p>
+								</div>
+							</div>
+							<div class="cottage__data data-house">
+								<p class="data-house__title subtitle subtitle_temnyy">Подходит под мероприятия:</p>
+								<ul class="data-house__targets">
+									<li class="data-house__target">Свадьба</li>
+									<li class="data-house__target">Новый год</li>
+									<li class="data-house__target">День рождения</li>
+									<li class="data-house__target data-house__target_big">Выпускной</li>
+									<li class="data-house__target data-house__target_big">Корпоратив</li>
+								</ul>
+								<p class="data-house__text subtext subtitle_temnyy">
+									Идеальный выбор для проведения шикарного вечера большой компанией
+									<br />
+									Свежий воздух, звуки природы, вкусные коктейли и изысканные блюда — все это ждет вас на нашей летней
+									веранде.
+								</p>
+								<p class="data-house__text subtext subtitle_temnyy">
+									Почувствуйте летнюю атмосферу, наслаждайтесь каждым моментом и создавайте новые яркие воспоминания вместе с нами!
+								</p>
+								<a href="#" class="data-house__link button button_temnyy">Забронировать</a>
+							</div>
+						</div>
+						<div class="cottage__features features">
+							<div class="features__item">
+								<p class="text">
+									Ранний заезд предоставляется только при наличии свободных мест. Поздний выезд предоставляется за
+									дополнительную плату: до 18.00 - 1/2 суток, после 18.00 - за полные сутки
+								</p>
+							</div>
+							<div class="features__item">
+								<p class="text">
+									Дети до 6 лет включительно размещаются бесплатно. Дополнительные места предоставляются по цене 3 500 ₽
+									в сутки. В праздничные дни цены могут быть изменены, скидки не предоставляются на этот период
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="page__banquet banquet banquet-form">
 					<div class="banquet__container">
-						<div class="banquet__body">
-							<article class="banquet__item banquet__item_1">
-								<img src="@img/banquet/b1.jpg" alt="Банкетный зал «Свияга»">
-								<h3 class="banquet__title subtitle">Банкетный зал «Свияга»</h3>
-								<p class="banquet__text subtext">Просторный зал, вмещающий до 80 гостей,  оснащен всем необходимым для проведения банкета, свадьбы или корпоративного мероприятия</p>
-								<div class="banquet__bottom">
-									<a href="#" class="banquet__button button">Забронировать</a>
-									<a href="#" class="arrow"><img src="@img/grand/arrow.svg" alt="Перейти"></a>
-								</div>
-							</article>
-							<article class="banquet__item banquet__item_2">
-								<img src="@img/banquet/b2.jpg" alt="Банкетный зал-кафе">
-								<h3 class="banquet__title subtitle">Банкетный зал-кафе</h3>
-								<p class="banquet__text subtext">Любители природы могут выбрать банкетный зал кафе. Панорамные окна и расположение на берегу реки Свияга создадут уютную атмосферу. Зал вмещает до 50 гостей.</p>
-								<div class="banquet__bottom">
-									<a href="#" class="banquet__button button">Забронировать</a>
-									<a href="#" class="arrow"><img src="@img/grand/arrow.svg" alt="Перейти"></a>
-								</div>
-							</article>
-							<article class="banquet__item banquet__item_3">
-								<img src="@img/banquet/b3.jpg" alt="Конференц-зал «Малый»">
-								<h3 class="banquet__title subtitle">Конференц-зал «Малый»</h3>
-								<p class="banquet__text subtext">Подходит для проведения камерных встреч. Уютный зал, вмещающий до 25 гостей</p>
-								<div class="banquet__bottom">
-									<a href="#" class="banquet__button button">Забронировать</a>
-									<a href="#" class="arrow"><img src="@img/grand/arrow.svg" alt="Перейти"></a>
-								</div>
-							</article>
-							<article class="banquet__item banquet__item_1">
-								<img src="@img/banquet/b41.jpg" alt="Конференц-зал «Большой»">
-								<h3 class="banquet__title subtitle">Конференц-зал «Большой»</h3>
-								<p class="banquet__text subtext">Зал технически оснащен для проведения деловых мероприятий, семинаров, тренингов. Вмещает до 80 гостей</p>
-								<div class="banquet__bottom">
-									<a href="#" class="banquet__button button">Забронировать</a>
-									<a href="#" class="arrow"><img src="@img/grand/arrow.svg" alt="Перейти"></a>
-								</div>
-							</article>
+						<div class="banquet-form__content">
+							<h3 class="banquet-form__title title">Сделайте ваш праздник незабываемым</h3>
+							<p class="banquet-form__text subtitle">Оставьте заявку и получите презентацию нашего предложения по созданию банкета</p>
+							<form action="#" class="banquet-form__form">
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Имя" class="input banquet-form__input">
+								<input autocomplete="off" type="tel" name="form[]" data-error="Ошибка" placeholder="Номер телефона" class="input banquet-form__input">
+								<button type="submit" class="button button_temnyy banquet-form__button">Позвоните мне</button>
+							</form>
+						</div>
+						<div class="banquet-form__img">
+							<img src="@img/banquet/b-form.jpg" alt="Image">
 						</div>
 					</div>
 				</section>

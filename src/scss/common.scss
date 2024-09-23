@@ -12,6 +12,9 @@
 }
 .subtitle {
 	font-weight: 700;
+	&_temnyy.subtitle {
+		color: $dop-temnyy
+	}
 		@media (max-width:$mobile){
 		}
 		@include adaptiveValue("font-size", 30, 18,0,1320,768);
@@ -31,6 +34,9 @@
 
 .subtext {
 	font-weight: 500;
+	&_temnyy.subtext {
+		color: $dop-temnyy;
+	}
 	@include adaptiveValue("font-size", 25, 18,0,1320,768);
 }
 .button {

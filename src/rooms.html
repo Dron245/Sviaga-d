@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru">
-	@@include('html/_head.htm',{ "title":"Аренда домов" })
+	@@include('html/_head.htm',{ "title":"Аренда номеров" })
 	<body>
 		<div class="wrapper select-item">
 			@@include('html/_header.htm',{})
@@ -9,7 +9,7 @@
 					<div class="banner__container">
 						<div class="banner__content rent">
 							<div class="banner__body">
-								<p class="banner__title">Выберете дом по своему вкусу или воспользуйтесь фильтром</p>
+								<p class="banner__title">Выберете номер по своему вкусу или воспользуйтесь фильтром</p>
 								<form action="#" class="banner__form">
 									<div class="banner__item item-banner">
 										<div class="item-banner__content">
@@ -103,114 +103,14 @@
 											<button type="button" class="button dialog__button">Готово</button>
 										</div>
 									</div>
-									<button type="button" class="banner__button button button_temnyy">Найти котедж</button>
+									<button type="button" class="banner__button button button_temnyy">Найти номер</button>
 								</form>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="page__rooms page__rooms_one rooms">
-					<div class="rooms__container">
-						<h3 class="rooms__title title_temnyy title">Большие дома</h3>
-						<div class="rooms__body galery">
-							<div class="galery__col">
-								<div class="galery__items">
-									<article class="galery__item">
-										<div class="galery__slider swiper">
-											<div class="galery__wrapper swiper-wrapper">
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
-												</div>
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
-												</div>
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
-												</div>
-											</div>
-											<div class="galery__pagination pagination pagination_invert"></div>
-										</div>
-										<div class="galery__content">
-											<h5 class="galery__title subtitle">Коттедж «№4»</h5>
-											<p class="galery__text">Просторный двухэтажный коттедж, 150 кв.м.</p>
-											<a href="#" class="galery__button button">Подробнее</a>
-										</div>
-									</article>
-									<article class="galery__item">
-										<div class="galery__slider swiper">
-											<div class="galery__wrapper swiper-wrapper">
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
-												</div>
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
-												</div>
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
-												</div>
-											</div>
-											<div class="galery__pagination pagination pagination_invert"></div>
-										</div>
-										<div class="galery__content">
-											<h5 class="galery__title subtitle">Коттедж «№6»</h5>
-											<p class="galery__text">Двухэтажный коттедж с финской сауной, 150 кв.м.</p>
-											<a href="#" class="galery__button button">Подробнее</a>
-										</div>
-									</article>
-								</div>
-							</div>
-							<div class="galery__col">
-								<div class="galery__items">
-									<article class="galery__item">
-										<div class="galery__slider swiper">
-											<div class="galery__wrapper swiper-wrapper">
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
-												</div>
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
-												</div>
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
-												</div>
-											</div>
-											<div class="galery__pagination pagination pagination_invert"></div>
-										</div>
-										<div class="galery__content">
-											<h5 class="galery__title subtitle">Коттедж «№5»</h5>
-											<p class="galery__text">Просторный двухэтажный коттедж, 150 кв.м.</p>
-											<a href="#" class="galery__button button">Подробнее</a>
-										</div>
-									</article>
-									<article class="galery__item">
-										<div class="galery__slider swiper">
-											<div class="galery__wrapper swiper-wrapper">
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
-												</div>
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
-												</div>
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
-												</div>
-											</div>
-											<div class="galery__pagination pagination pagination_invert"></div>
-										</div>
-										<div class="galery__content">
-											<h5 class="galery__title subtitle">Коттедж «№7»</h5>
-											<p class="galery__text">Двухэтажный коттедж, расположенный на левом берегу озера, 150 кв.м.</p>
-											<a href="#" class="galery__button button">Подробнее</a>
-										</div>
-									</article>
-								</div>
 							</div>
 						</div>
 					</div>
 				</section>
 				<section class="page__rooms rooms">
 					<div class="rooms__container">
-						<h3 class="rooms__title title_temnyy title">Маленькие дома</h3>
 						<div class="rooms__body galery">
 							<div class="galery__col">
 								<div class="galery__items">
@@ -218,20 +118,22 @@
 										<div class="galery__slider swiper">
 											<div class="galery__wrapper swiper-wrapper">
 												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
+													<img src="@img/rooms/r-s-1.jpg" alt="Номер семейный" />
 												</div>
 												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
+													<img src="@img/rooms/r-s-1.jpg" alt="Номер семейный" />
 												</div>
 												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
+													<img src="@img/rooms/r-s-1.jpg" alt="Номер семейный" />
 												</div>
 											</div>
 											<div class="galery__pagination pagination pagination_invert"></div>
 										</div>
 										<div class="galery__content">
-											<h5 class="galery__title subtitle">Коттедж «№1»</h5>
-											<p class="galery__text">Двухэтажный коттедж из сруба, 80 кв.м.</p>
+											<h5 class="galery__title subtitle">Номер «Семейный»</h5>
+											<p class="galery__text">
+												Однокомнатный номер с двумя односпальными кроватями и диваном, 24 кв.м.
+											</p>
 											<a href="#" class="galery__button button">Подробнее</a>
 										</div>
 									</article>
@@ -239,20 +141,20 @@
 										<div class="galery__slider swiper">
 											<div class="galery__wrapper swiper-wrapper">
 												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
+													<img src="@img/rooms/r-st-1.jpg" alt="Номер стандартный" />
 												</div>
 												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
+													<img src="@img/rooms/r-st-1.jpg" alt="Номер стандартный" />
 												</div>
 												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/1-1.jpg" alt="Image" />
+													<img src="@img/rooms/r-st-1.jpg" alt="Номер стандартный" />
 												</div>
 											</div>
 											<div class="galery__pagination pagination pagination_invert"></div>
 										</div>
 										<div class="galery__content">
-											<h5 class="galery__title subtitle">Коттедж «№3»</h5>
-											<p class="galery__text">Двухэтажный коттедж в стиле Прованс с декоративным камином, 80 кв.м.</p>
+											<h5 class="galery__title subtitle">Номер «Стандарт»</h5>
+											<p class="galery__text">Однокомнатный номер с двумя односпальными кроватями, 16 кв.м.</p>
 											<a href="#" class="galery__button button">Подробнее</a>
 										</div>
 									</article>
@@ -264,41 +166,20 @@
 										<div class="galery__slider swiper">
 											<div class="galery__wrapper swiper-wrapper">
 												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
+													<img src="@img/rooms/r-l-1.jpg" alt="Номер люкс" />
 												</div>
 												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
+													<img src="@img/rooms/r-l-1.jpg" alt="Номер люкс" />
 												</div>
 												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
+													<img src="@img/rooms/r-l-1.jpg" alt="Номер люкс" />
 												</div>
 											</div>
 											<div class="galery__pagination pagination pagination_invert"></div>
 										</div>
 										<div class="galery__content">
-											<h5 class="galery__title subtitle">Коттедж «№2»</h5>
-											<p class="galery__text">Двухэтажный коттедж в русском стиле, 80 кв.м.</p>
-											<a href="#" class="galery__button button">Подробнее</a>
-										</div>
-									</article>
-									<article class="galery__item">
-										<div class="galery__slider swiper">
-											<div class="galery__wrapper swiper-wrapper">
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
-												</div>
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
-												</div>
-												<div class="galery__slide swiper-slide">
-													<img src="@img/main/rooms/2-1.jpg" alt="Image" />
-												</div>
-											</div>
-											<div class="galery__pagination pagination pagination_invert"></div>
-										</div>
-										<div class="galery__content">
-											<h5 class="galery__title subtitle">Коттедж «№4»</h5>
-											<p class="galery__text">Двухэтажный коттедж, расположенный на левом берегу озера, 80 кв.м.</p>
+											<h5 class="galery__title subtitle">Номер «Люкс»</h5>
+											<p class="galery__text">Двухкомнатный номер с одной двуспальной кроватью и диваном, 34 кв.м.</p>
 											<a href="#" class="galery__button button">Подробнее</a>
 										</div>
 									</article>
