@@ -44,9 +44,6 @@ window.addEventListener("DOMContentLoaded", () => {
 		// Открытие сабменю
 
 		if (document.querySelector('.menu-open') && targetElement.closest(".menu__item") && targetElement.closest("header") && !targetElement.closest(".menu__item").classList.contains("_menu__item-active")) {
-			// targetElement.classList.toggle('_open');
-			// document.querySelector('.menu__user-data') ? targetElement.closest('.menu__user-data').classList.toggle('_user-open') : null
-			console.log(1);
 			
 			const menuItemMobile = targetElement.closest('.menu__list').querySelectorAll('.menu__item')
 			menuItemMobile.forEach(element => {
@@ -86,6 +83,11 @@ window.addEventListener("DOMContentLoaded", () => {
 		}
 
 	
+	}
+
+	const wrapper = document.querySelector('.banner__content')
+	if (!wrapper.classList.contains('banner__form') && document.querySelector('.header-temnyy')) {
+		wrapper.style.boxShadow = 'none'
 	}
 })
 
