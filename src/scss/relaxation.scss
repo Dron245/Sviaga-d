@@ -58,7 +58,7 @@
 	}
 
 	&__bottom {
-		.relaxation & {
+		.relaxation &, .all-relax & {
 			justify-content: flex-end;
 		}
 	}

@@ -32,12 +32,19 @@
 		padding: 20px;
 		@media (min-width:$mobile){
 			@include adaptiveValue("height", 610, 300,0,1320,768);
+			.relaxation & {
+				@include adaptiveValue("height", 430, 200,0,1320,768);
+
+			}
 		}
 		@media (max-width:$mobile){
 			 border-radius: 10px;
 			 padding: 10px; 
-			 @include adaptiveValue("height", 610, 300,0,768,360);
-		}
+			 @include adaptiveValue("height", 430, 200,0,768,360);
+			.relaxation & {
+
+			}
+			}
 		img {
 			position: absolute;
 			top: 0;

@@ -1,0 +1,243 @@
+
+.fish {
+}
+.page {
+
+		&__banner {
+		}
+
+		&__cottage {
+			.fish & {
+				margin-top: 0;
+			}
+		}
+
+		&__rental {
+		}
+
+		&__banquet {
+		}
+
+		&__all-relax {
+		}
+
+		&__questions {
+		}
+}
+.banner {
+
+		&__container {
+		}
+
+		&__content {
+		}
+
+		&__body {
+		}
+
+		&__title {
+		}
+}
+
+.costs {
+
+		&__cost {
+			.fish & {
+				justify-content: initial;
+				align-items: center
+			}
+			&_budni  {
+				.rental & .costs__text {
+					@include adaptiveValue("font-size", 20, 14,0,1320,768);
+				}
+				.rental & {
+					flex: 0 0 74.3%;
+					&::before,&::after{
+						display: none;
+					}
+				}
+			}
+
+			&_vyh {
+				.rental & {
+					flex: 0 0 23.255814%; /* 300/1290 */
+					&::before{
+						display: none;
+					}
+				}
+			}
+		}
+
+		&__text {
+			
+		}
+
+		&__number {
+		}
+}
+
+.data-house {
+
+		&__title {
+		}
+
+		&__text {
+		}
+
+		&__bottom {
+		}
+
+		&__link {
+		}
+}
+.subtitle {
+
+		&_temnyy {
+		}
+}
+.button {
+
+		&_temnyy {
+		}
+}
+.features {
+
+		&__item {
+		}
+}
+.text {
+
+		&_temnyy {
+		}
+}
+.rental {
+
+		&__container {
+		}
+
+		&__title {
+		}
+
+		&__list {
+			&_bottom {
+				margin-top: 30px;
+			}
+		}
+
+		&__item {
+			&:not(:last-child) {margin-bottom: toRem(10);}
+			&_top {
+				& .costs__cost {
+					
+				}
+				& .costs__text.subtext[class] {
+					@include adaptiveValue("font-size", 30, 18,0,1320,768);
+				}
+				.costs__cost.costs__cost_budni[class] {
+					&::before,&::after{
+						content: "";
+						display: block;
+						width: 30px;
+					}
+				}
+
+				.costs__cost.costs__cost_vyh {[class]
+					&::before{
+						content: "";
+						display: block;
+						height: 40%;
+						width: 30px;
+					}
+				}
+			}
+		}
+}
+.banquet {
+
+		&__container {
+		}
+
+		&__item {
+
+			&_3 {
+			}
+
+			&_1 {
+			}
+
+			&_2 {
+			}
+		}
+
+		&__title {
+		}
+
+		&__bottom {
+		}
+}
+.banquet-form {
+
+		&__body {
+		}
+
+		&__content {
+		}
+
+		&__title {
+		}
+
+		&__text {
+		}
+
+		&__form {
+		}
+
+		&__input {
+		}
+
+		&__button {
+		}
+
+		&__politica {
+		}
+
+		&__img {
+		}
+}
+.input {
+}
+.all-relax {
+
+		&__container {
+		}
+
+		&__title {
+		}
+
+		&__body {
+		}
+}
+.arrow {
+}
+.questions {
+
+		&__container {
+		}
+
+		&__title {
+		}
+}
+.spollers {
+
+		&__item {
+		}
+
+		&__title {
+		}
+
+		&__arrow {
+		}
+
+		&__body {
+		}
+}

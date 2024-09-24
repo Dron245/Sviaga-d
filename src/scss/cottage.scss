@@ -82,6 +82,9 @@
 .page {
 	&__cottage {
 		@include adaptiveValue("margin-top", 80, 40, 0, 1320, 768);
+	.paintball & {
+		margin-top: 0;
+	}
 	}
 }
 .cottage {
@@ -277,12 +280,20 @@
 	}
 
 	&__list {
+		.paintball & {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__list-item {
 		list-style-type: disc;
 		margin-left: 20px;
-
+		.paintball & {
+			color: $dop-temnyy;
+			& span {
+				font-weight: 700;
+			}
+		}
 		&_bold {
 			font-weight: 700;
 			line-height: 1.26;

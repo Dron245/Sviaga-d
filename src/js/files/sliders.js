@@ -140,10 +140,10 @@ function initSliders() {
 			//autoHeight: true,
 			speed: 800,
 			loop: true,
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
+			// autoplay: {
+			// 	delay: 3000,
+			// 	disableOnInteraction: false,
+			// },
 			pagination: {
 				el: '.description__pagination',
 				clickable: true,

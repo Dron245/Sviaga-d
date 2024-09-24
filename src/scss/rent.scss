@@ -40,7 +40,8 @@
 			left: initial;
 			translate: initial;
 			padding-inline: 50px;
-			max-width: 75%;
+			max-width: initial;
+			// width: initial;
 			@media (max-width: $tablet) {
 				bottom: 20px;
 			}
@@ -107,8 +108,8 @@
 .details {
 	.select-item & {
 		background-color: inherit;
-		padding-top: 90px;
 		padding-bottom: 0;
+		@include adaptiveValue("padding-top", 90, 40,0,1320,768);
 	}
 
 	&__container {
