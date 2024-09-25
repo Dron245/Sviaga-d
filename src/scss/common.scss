@@ -71,6 +71,7 @@
 		&:hover, &:active{
 			color: $dop-temnyy;
 			background-color: $mainColor;
+			outline: 1px solid $dop-temnyy;
 		}
 	}
 }

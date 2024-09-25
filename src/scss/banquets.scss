@@ -30,6 +30,13 @@
 		border-radius: 20px;
 		overflow: hidden;
 		padding: 20px;
+		&::after{
+			content:'';
+			position: absolute;
+			inset: 0;
+			// z-index: 3;
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+		}
 		@media (min-width:$mobile){
 			@include adaptiveValue("height", 610, 300,0,1320,768);
 			.relaxation & {
@@ -40,6 +47,7 @@
 		@media (max-width:$mobile){
 			 border-radius: 10px;
 			 padding: 10px; 
+			 width: 100%;
 			 @include adaptiveValue("height", 430, 200,0,768,360);
 			.relaxation & {
 
@@ -87,10 +95,18 @@
 	&__title {
 		position: relative;
 		margin-bottom: 30px;
+		z-index: 2;
+		@media (max-width:$mobileSmall){
+			 margin-bottom: 15px; 
+		}
 	}
 
 	&__text {
 		position: relative;
+		z-index: 2;
+		&[class] {
+			@include adaptiveValue("font-size", 25, 14,0,1320,768);
+}
 	}
 
 	&__bottom {
@@ -99,6 +115,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		z-index: 2;
 		
 		.arrow img {
 			position: relative;
@@ -107,6 +124,10 @@
 
 	&__button {
 		@include adaptiveValue("padding-inline", 60, 20,0,1320,768 );
+		@media (max-width:$mobileSmall){
+			 padding: 15px;
+			 font-size: 14px; 
+		}
 	}
 }
 //========================================================================================================================================================
@@ -167,7 +188,7 @@
 
 	&__content {
 		@media (max-width:$mobile){
-			 padding: 10px; 
+			 padding: 15px; 
 		}
 	}
 
@@ -178,7 +199,10 @@
 	&__text {
 		margin-bottom: 30px;
 	}
-
+	
+	&__text.subtitle {
+		font-weight: 600;
+	}
 	&__form {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -191,7 +215,8 @@
 		padding: 20px;
 		color: $dop-temnyy;
 		@media (max-width:$mobileSmall){
-			 padding: 10px; 
+			 padding: 10px;
+			 font-size: 14px;
 		}
 	}
 

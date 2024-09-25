@@ -63,11 +63,11 @@ function initSliders() {
 			spaceBetween: 0,
 			//autoHeight: true,
 			speed: 800,
-			// loop: true,
-			// autoplay: {
-			// 	delay: 3000,
-			// 	disableOnInteraction: false,
-			// },
+			loop: true,
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
 			pagination: {
 				el: '.galery__pagination',
 				clickable: true,
@@ -140,10 +140,10 @@ function initSliders() {
 			//autoHeight: true,
 			speed: 800,
 			loop: true,
-			// autoplay: {
-			// 	delay: 3000,
-			// 	disableOnInteraction: false,
-			// },
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
 			pagination: {
 				el: '.description__pagination',
 				clickable: true,

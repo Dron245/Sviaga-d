@@ -46,5 +46,22 @@
 		 }
 	  }
 	}
- 
  }
+
+ .daterangepicker .calendar-table table {
+	border-collapse: separate;
+	border-spacing: 3px;
+ }
+ .daterangepicker .drp-calendar {
+	max-width: 300px;
+ }
+
+ .daterangepicker .table-condensed thead th:nth-child(6),
+ .daterangepicker .table-condensed thead th:nth-child(7) {
+	color: #C82828;
+ }
+
+ .daterangepicker .table-condensed tbody td.in-range {
+	border-radius: 2px;
+ }
+

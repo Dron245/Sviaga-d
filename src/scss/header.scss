@@ -149,6 +149,9 @@
 		position: relative;
 		z-index: 2;
 		row-gap: 10px;
+		@media (min-width:$tablet){
+			 padding-right: 1rem; 
+		}
 	}
 
 	&__item {
@@ -283,8 +286,11 @@
 		padding-top: 0;
 	}
 	.menu-open & svg path {
-		fill: $dop-temnyy;
-		stroke: $dop-temnyy;
+		stroke: $osnovnoy-temnyy;
+	}
+	.menu-open & svg g path {
+		stroke: $osnovnoy-temnyy;
+		fill: $osnovnoy-temnyy;
 	}
 	@media (min-width: $mobile) {
 		@include adaptiveValue("gap", 30, 5, 0, 1320, 768);
@@ -344,10 +350,17 @@
 			@include adaptiveValue("padding-block", 23, 7, 0, 1320, 768);
 			.header-temnyy &[class] {
 				padding-block: 23px;
+				// @extend .button_light;
 			}
 		}
 		@media (max-width: $tablet) {
 			display: none;
+		}
+		.header-temnyy & {
+			&:hover, &:active{
+				color: $mainColor;
+				background-color: $dop-temnyy;
+			}
 		}
 	}
 }

@@ -85,6 +85,7 @@ window.addEventListener("DOMContentLoaded", () => {
 	
 	}
 
+	//Убрал тень у банера, если стандартный фон и нет формы.
 	const wrapper = document.querySelector('.banner__content')
 	if (!wrapper.classList.contains('banner__form') && document.querySelector('.header-temnyy')) {
 		wrapper.style.boxShadow = 'none'
@@ -92,13 +93,23 @@ window.addEventListener("DOMContentLoaded", () => {
 })
 
 	// По календарю
+	const checkIn = document.querySelectorAll('.check-in');
+	const checkOut = document.querySelectorAll('.check-out');
+	const monthnames = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
     const banner = document.querySelector('.banner') 
     const checkInDateElement = banner.querySelector('.check-in');
     const checkOutDateElement = banner.querySelector('.check-out');
     const checkInInputElement = banner.querySelector('input[name="check-in"]');
     const checkOutInputElement = banner.querySelector('input[name="exit"]');
     const dateRangePickerElements = banner.querySelectorAll('.item-banner__img');
-    // Функция для обновления дат и полей ввода
+    
+	 checkIn.forEach(element => {
+		element.innerHTML = `${new Date().getUTCDate()}.${monthnames[new Date().getUTCMonth()]}.${new Date().getUTCFullYear()}`;
+	 });
+	 checkOut.forEach(element => {
+		element.innerHTML = `${new Date().getUTCDate() + 3}.${monthnames[new Date().getUTCMonth()]}.${new Date().getUTCFullYear()}`;
+	 });
+	 // Функция для обновления дат и полей ввода
     function updateDates(start, end) {
         checkInDateElement.textContent = start.format('DD.MM.YYYY');
         checkOutDateElement.textContent = end.format('DD.MM.YYYY');
@@ -111,30 +122,40 @@ window.addEventListener("DOMContentLoaded", () => {
       new daterangepicker(pickerElement, {
         autoUpdateInput: false, // Не обновлять поля ввода автоматически
         locale: {
-			format: 'DD.MM.YYYY',
-			separator: ' - ',
-			applyLabel: 'Применить',
-			cancelLabel: 'Отмена',
-			fromLabel: 'С',
-			toLabel: 'По',
-			weekLabel: 'Нед',
-			customRangeLabel: 'Настройка',
-			monthNames: [
-				 'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
-				 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
-			],
-			daysOfWeek: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-			firstDay: 1 
-	  }
+			  format: 'DD.MM.YYYY',
+			  separator: ' - ',
+			  applyLabel: 'Применить',
+			  cancelLabel: 'Отмена',
+			  fromLabel: 'С',
+			  toLabel: 'По',
+			  weekLabel: 'Нед',
+			  customRangeLabel: 'Настройка',
+			  monthNames: [
+				  'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+				  'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+				],
+				daysOfWeek: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+				firstDay: 1 
+			},
+			endDate:  `${new Date().getDate() + 3}`,
       }, function(start, end, label) {
-        updateDates(start, end);
+			updateDates(start, end);
       });
-    });
-  
+	});
+	//  const elem = document.createElement('div')
+	//  let bottom = document.querySelector("body > div:nth-child(3) > div.drp-buttons");
+	//  elem.setAttribute('class', 'custom');
+	//  elem.innerHTML = `
+	//  <span class="custom__bold">Заезд</span>
+	
+	//  `
+	//  bottom.prepend(elem);
+	//  bottom.innerHTML = '<div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default" type="button">Отмена</button><button class="applyBtn btn btn-sm btn-primary" type="button">Применить</button> </div>'
     // Обработчик клика по изображению календаря
     dateRangePickerElements.forEach(function(pickerElement) {
       pickerElement.addEventListener('click', function() {
-        this.previousElementSibling.click(); // Активируем клик по скрытому полю ввода
+      //   this.previousElementSibling.click(); // Активируем клик по скрытому полю ввода
+        document.querySelector('input[type="hidden"]').click(); // Активируем клик по скрытому полю ввода
       });
     });
 

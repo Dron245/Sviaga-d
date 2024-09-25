@@ -30,11 +30,17 @@
 			left: 0;
 			translate: 0;
 			max-width: initial;
-			width: 100%;
+			width: 75%;
 			padding-inline: 0;
+		}
+		&:has(form) {
+			.header-temnyy &[class] {
+				width: 100%;
+			}
 		}
 	}
 
+	
 	&__title {
 		.header-temnyy & {
 			color: $dop-temnyy;
@@ -88,6 +94,9 @@
 	}
 }
 .cottage {
+	.header-temnyy &[class] {
+		margin-top: 0;
+	}
 	&__container {
 	}
 
@@ -171,7 +180,7 @@
 		color: $dop-temnyy;
 		padding: 15px;
 		display: grid;
-		justify-content: center;
+		// justify-content: center;
 		border-radius: 20px;
 		position: relative;
 		@media (max-width:$mobile){
@@ -314,12 +323,16 @@
 	@media (max-width: $mobile) {
 		flex-direction: column;
 	}
+	@media (max-width:$mobileSmall){
+		 row-gap: 15px; 
+	}
 	&__item {
 		padding: 20px;
 		border-radius: 20px;
 		background-color: $osnovnoy-temnyy;
 		@media (max-width: $mobile) {
 			border-radius: 10px;
+			padding: 15px;
 		}
 	}
 }

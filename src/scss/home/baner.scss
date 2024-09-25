@@ -54,7 +54,7 @@
 	&__form {
 		display: flex;
 		border-radius: 20px;
-		padding: 20px;
+		padding: 20px 20px 20px 15px;
 		gap: 20px;
 		background-color: $mainColor;
 		line-height: 1.04;
@@ -79,6 +79,7 @@
 	}
 
 	&__item {
+		position: relative;
 		color: $dop-temnyy;
 		width: 24.961345%; /* 278/1190 */
 		display: flex;
@@ -98,6 +99,9 @@
 		background: #fff;
 	}
 
+	&__text {
+		text-wrap: balance;
+	}
 	&__button {
 		background-color: $osnovnoy-temnyy;
 		width: 21.596639%; /* 257/1190 */
@@ -123,6 +127,14 @@
 
 	&__img {
 		cursor: pointer;
+		position: absolute;
+		inset: 0;
+		img {
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			translate: 0 -50%;
+		}
 	}
 }
 
