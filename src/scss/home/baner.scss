@@ -34,6 +34,9 @@
 			width: 100%;
 			@include adaptiveValue("top", 300, 150, 0, 768, 360);
 		}
+		@media (max-width:$mobileSmall){
+			 padding-right: 10px; 
+		}
 	}
 	&__title {
 		color: $mainColor;
@@ -44,10 +47,16 @@
 		@include adaptiveValue("font-size", 60, 25, 0, 1320, 360);
 		@media (min-width: $mobile) {
 			padding-top: 450px;
-			margin-bottom: 30px;
+			&:not(:last-child) {
+				
+				margin-bottom: 30px;
+			}
 		}
 		@media (max-width: $mobile) {
-			@include adaptiveValue("margin-bottom", 30, 5, 0, 768, 360);
+			&:not(:last-child) {
+				
+				@include adaptiveValue("margin-bottom", 30, 5, 0, 768, 360);
+			}
 		}
 	}
 

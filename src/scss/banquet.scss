@@ -128,12 +128,13 @@
 	}
 	&__text {
 		@include adaptiveValue("font-size", 23, 18,0,1320,768);
-		&:not(:last-child) {margin-bottom: toRem(20);}
+		// &:not(:last-child) {margin-bottom: toRem(20);}
 	}
 
 	&__link {
 		width: 100%;
 		text-align: center;
+		margin-top: 20px;
 	}
 }
 .button {

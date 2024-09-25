@@ -66,24 +66,27 @@
 	}
 
 	&_temnyy.button {
-		background-color: $dop-temnyy;
-		color: $mainColor;
+		outline: 1px solid $dop-temnyy;
+		color: $dop-temnyy;
+		background-color: $mainColor;
 		&:hover, &:active{
-			color: $dop-temnyy;
-			background-color: $mainColor;
-			outline: 1px solid $dop-temnyy;
+			color: $mainColor;
+			background-color: $dop-temnyy;
 		}
 	}
 }
 
 .arrow {
-	display:flex ;
-	//  place-items:center;
+	// display:flex ;
+	display:grid ;
+	 place-items:center;
 	 border-radius: 50%;
+	flex: 0 0 70px;
 	width: 70px;
 	background-color: $mainColor;
 	aspect-ratio: 1/1;
 	img {
+		width: 100%;
 		transition: rotate 0.3s;
 	}
 	&:hover{
@@ -92,10 +95,12 @@
 		}
 	}
 	@media (max-width:$mobile){
+		flex: 0 0 50px;
 		 width: 50px;
 		 height: 50px;
 	}
 	@media (max-width:$mobileSmall){
+		flex: 0 0 30px;
 		 width: 30px;
 		 height: 30px;
 	}

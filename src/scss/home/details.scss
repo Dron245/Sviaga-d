@@ -7,16 +7,17 @@
 			 border-radius: 0 0 20px 20px; 
 		}
 		&__body {
-			margin-top: 100px;
+			
 			display: grid;
 			gap: 30px;
 			grid-template-columns: repeat(4, 1fr);
 			position: relative;
-
+			@include adaptiveValue("margin-top", 100, 40,0,1320,768);
 			@media (max-width:$tablet) {
 				grid-template-columns: 1fr 1fr;
 			}
 
+			
 			@media (max-width:$mobileSmall) {
 				grid-template-columns: 100%;
 				gap: 20px;
@@ -297,9 +298,12 @@
 
 			&_7 {
 				background-color: initial;
-				outline: 2px solid $mainColor;
 				@media (min-width:$tablet){
+					border: 2px solid $mainColor;
 					border-top-left-radius: 0;
+				}
+				@media (max-width:$tablet){
+					outline: 2px solid $mainColor;
 				}
 				p {
 					color: $mainColor;

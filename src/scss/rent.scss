@@ -109,7 +109,7 @@
 	.select-item & {
 		background-color: inherit;
 		padding-bottom: 0;
-		@include adaptiveValue("padding-top", 90, 40,0,1320,768);
+		@include adaptiveValue("padding-top", 130, 40,0,1320,768);
 	}
 
 	&__container {
