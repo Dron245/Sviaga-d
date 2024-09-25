@@ -35,7 +35,7 @@
 	&__body {
 		.select-item & {
 			position: relative;
-			top: initial;
+			top: 0;
 			bottom: initial;
 			left: initial;
 			translate: initial;
@@ -75,7 +75,10 @@
 		.select-item & {
 			padding-top: 0px;
 			@media (max-width: $tablet) {
-				margin-bottom: 15px;
+				&:not(:last-child) {
+					
+					margin-bottom: 15px;
+				}
 			}
 		}
 		.select-item .rent & {
