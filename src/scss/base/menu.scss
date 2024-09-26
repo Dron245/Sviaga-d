@@ -26,7 +26,7 @@
 			&::before {
 				content: "";
 				position: fixed;
-				width: 100%;
+				width: 60%;
 				// height: toRem(82);
 				right: -100%;
 				top: 30px;
@@ -69,6 +69,18 @@
 	}
 	// .menu__item
 	&__item {
+		@media (max-width:$tablet){
+			transition: translate 0.3s;
+			translate: 30px;
+			.menu-open & {
+				translate: 0;
+			}
+			@for $i from 1 through 5 {
+				&:nth-child(#{$i}){
+					transition-delay: calc(#{$i} * 0.15s);
+				}
+			}
+		}
 	}
 	// .menu__link
 	&__link[class] {

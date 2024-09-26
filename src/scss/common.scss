@@ -76,6 +76,19 @@
 	}
 }
 
+//Убираю треугольник на IOS
+summary::-webkit-details-marker {
+	display: none;
+}
+summary {
+	list-style: none;
+}
+
+details > summary::marker {
+	display: none;
+	content: ''; /* Прощай, стрелочка, теперь ты здесь не нужна! */
+}
+
 .arrow {
 	// display:flex ;
 	display:grid ;

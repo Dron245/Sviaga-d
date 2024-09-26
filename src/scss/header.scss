@@ -3,7 +3,7 @@
 	color: $dop-temnyy;
 	padding-block: 30px;
 	line-height: 1.04;
-	
+	position: relative;
 	@media (max-width: $tablet) {
 		padding-block: 15px;
 	}
@@ -18,6 +18,19 @@
 		
 	}
 
+	&__drop {
+		background: #020001;
+    position: fixed;
+   inset: 0;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+		.menu-open & {
+			opacity: .58;
+    	z-index: 3;
+   	 pointer-events: all;
+		}
+	}
 	&__bg {
 		display: flex;
 		align-items: center;

@@ -64,4 +64,10 @@
  .daterangepicker .table-condensed tbody td.in-range {
 	border-radius: 2px;
  }
+ 
+ .daterangepicker {
+	@media (max-width: toEm(564)){
+		  width: 310px;
+	}
+ }
 
