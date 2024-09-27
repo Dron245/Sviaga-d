@@ -112,6 +112,7 @@
 		text-wrap: balance;
 	}
 	&__button {
+		text-align: center;
 		background-color: $osnovnoy-temnyy;
 		width: 21.596639%; /* 257/1190 */
 	}
@@ -193,6 +194,7 @@
 	padding: 30px;
 	top: 120%;
 	opacity: 0;
+	visibility: hidden;
 	line-height: 1.04;
 	z-index: 3;
 	transition:
@@ -201,6 +203,7 @@
 	._active-dialog & {
 		top: 110%;
 		opacity: 1;
+		visibility: visible;
 	}
 	&__title {
 		font-weight: 700;
