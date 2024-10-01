@@ -35,9 +35,10 @@
 		background-color: $osnovnoy-temnyy;
 		border-radius: 20px 20px 20px 20px;
 		padding: 25px;
-		transition: border-radius 0.2s;
+		transition: border-radius 0.2s ease-in-out 0.3s;
 		&._spoller-active {
 			border-radius: 20px 20px 0 0;
+			transition: border-radius 0.2s ease-in-out 0s;
 			.arrow img {
 				rotate: 90deg;
 			}
